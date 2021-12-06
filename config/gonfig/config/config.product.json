@@ -1,0 +1,8 @@
+{
+	"Port" : 8000,
+	"Logging" : {
+		"Type": "Product",
+		"LogLevel": "Info",
+		"MessageType": "YYYY-MM-DD"
+	}
+}
