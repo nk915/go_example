@@ -6,14 +6,18 @@ import (
 	"github.com/hashicorp/go-memdb"
 )
 
-func main() {
-	// Create a sample struct
-	type Person struct {
-		Email string
-		Name  string
-		Age   int
-	}
+type Repositoty interface {
+	//CreateTableSchema() memdb.DBSchema
+}
 
+// Create a sample struct
+type Person struct {
+	Email string
+	Name  string
+	Age   int
+}
+
+func CreateTableSchema() *memdb.DBSchema {
 	// Create the DB schema
 	schema := &memdb.DBSchema{
 		Tables: map[string]*memdb.TableSchema{
@@ -34,6 +38,12 @@ func main() {
 			},
 		},
 	}
+	return schema
+}
+
+func main() {
+
+	schema := CreateTableSchema()
 
 	// Create a new data base
 	db, err := memdb.NewMemDB(schema)
@@ -51,6 +61,7 @@ func main() {
 		&Person{"tariq@aol.com", "Tariq", 21},
 		&Person{"dorothy@aol.com", "Dorothy", 53},
 	}
+
 	for _, p := range people {
 		if err := txn.Insert("person", p); err != nil {
 			panic(err)
