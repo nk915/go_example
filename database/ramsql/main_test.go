@@ -84,8 +84,8 @@ func TestInsert1(t *testing.T) {
 	query := `SELECT address.street_number, address.street FROM address 
 							JOIN user_addresses ON address.id=user_addresses.address_id 
 							WHERE user_addresses.user_id = $1;`
-
 	rows, err := db.Query(query, "1")
+
 	if err != nil {
 		t.Fatalf("sql.Exec: Error: %s\n", err)
 	}
