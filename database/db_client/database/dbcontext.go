@@ -34,8 +34,9 @@ func New(db *sql.DB) (Repository, error) {
 func (repo *repository) CreateTable() error {
 	tables := []string{
 		//`CREATE TABLE user (id BIGSERIAL PRIMARY KEY, age INT, email TEXT, address TEXT, phone TEXT);`,
-		`CREATE TABLE user (id TEXT, age INT, email TEXT, address TEXT, phone TEXT);`,
-		`CREATE TABLE user_addresses (address_id INT, user_id INT);`,
+		//`DROP TABLE tbl_user;`,
+		`CREATE TABLE IF NOT EXISTS tbl_user (id TEXT, age INT, email TEXT, address TEXT, phone TEXT);`,
+		`CREATE TABLE IF NOT EXISTS tbl_user_addresses (address_id INT, user_id INT);`,
 	}
 
 	for _, table := range tables {
@@ -50,7 +51,7 @@ func (repo *repository) CreateTable() error {
 }
 
 func (repo *repository) InsertUser(user User) error {
-	query := `INSERT INTO user (id, age, email, address, phone) VALUES ($1, $2, $3, $4, $5);`
+	query := `INSERT INTO tbl_user (id, age, email, address, phone) VALUES ($1, $2, $3, $4, $5);`
 	// query := `INSERT INTO user (id, age, email, address, phone) VALUES ('kng', 30, 'nk915@hanssak.co.kr', 'seoul', '010-1111-2222');`
 
 	_, err := repo.db.Exec(query, user.ID, user.Age, user.Email, user.Address, user.Phone)
@@ -70,7 +71,7 @@ func (repo *repository) DeleteUser(id string) error {
 func (repo *repository) GetUserByID(id string) error {
 	var userRow = User{}
 	query := `
-		SELECT id, age, email, address, phone FROM user WHERE id = $1`
+		SELECT id, age, email, address, phone FROM tbl_user WHERE id = $1`
 
 	if err := repo.db.QueryRow(query, id).
 		Scan(&userRow.ID, &userRow.Age, &userRow.Email, &userRow.Address, &userRow.Phone); err != nil {

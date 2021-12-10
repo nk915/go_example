@@ -5,34 +5,52 @@ import (
 	"fmt"
 	"os"
 
+	_ "github.com/lib/pq"
 	_ "github.com/proullon/ramsql/driver"
-	ramsqldb "local-testing.com/nk915/database"
+	dbcontext "local-testing.com/nk915/database"
+)
+
+const (
+	host     = ""
+	port     = 5432
+	user     = "postgres"
+	password = ""
+	dbname   = ""
 )
 
 func main() {
 	fmt.Println("Hello World..")
 
+	isMemDB := true
+
 	var db *sql.DB
 	{
 		var err error
-		db, err = sql.Open("ramsql", "TestInMemDB")
+		var psqlconn string
+		if isMemDB {
+			db, err = sql.Open("ramsql", "TestInMemDB")
+		} else {
+			psqlconn = fmt.Sprintf("host=%s port=%d user=%s password=%s dbname=%s sslmode=disable", host, port, user, password, dbname)
+			db, err = sql.Open("postgres", psqlconn)
+		}
+
 		if err != nil {
-			fmt.Println("Err ramsql", err)
+			fmt.Println("Err DB Conn: ", err)
 			os.Exit(-1)
 		}
 	}
 
-	repostiory, err := ramsqldb.New(db)
+	repostiory, err := dbcontext.New(db)
 	defer repostiory.Close()
 
 	if err != nil {
-		fmt.Println("Err ramsql", err)
+		fmt.Println("Err New: ", err)
 		os.Exit(-1)
 	}
 
 	repostiory.CreateTable()
 
-	user := ramsqldb.User{"kng", 30, "nk915@local-testing.com", "seoul", "010-1111-2222"}
+	user := dbcontext.User{"kng", 30, "nk915@local-testing.com", "seoul", "010-1111-2222"}
 	repostiory.InsertUser(user)
 	repostiory.GetUserByID("kng")
 	repostiory.GetUserByID("A")
