@@ -1,4 +1,4 @@
-package ramsqldb
+package dbcontext
 
 import (
 	"database/sql"
