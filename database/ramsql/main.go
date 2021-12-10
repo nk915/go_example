@@ -38,7 +38,7 @@ func main() {
 	var db *sql.DB
 	{
 		var err error
-		db, err = sql.Open("ramsql", "TestLoadUserAddresses")
+		db, err = sql.Open("ramsql", "TestInMemDB")
 		if err != nil {
 			fmt.Println("Err ramsql", err)
 			os.Exit(-1)

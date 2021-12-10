@@ -5,6 +5,7 @@ import (
 	"os"
 	"path"
 	"path/filepath"
+	"reflect"
 	"runtime"
 	"strings"
 
@@ -34,6 +35,8 @@ func main() {
 	fmt.Println("Port: ", config.Port)
 	fmt.Println("Logging: ", config.Logging)
 	fmt.Println("Logging->LogLevel: ", config.Logging["LogLevel"])
+	fmt.Println("Logging->LogLevel Type: ", reflect.TypeOf(config.Logging["LogLevel"]))
+	fmt.Println("Logging->LogLevel String: ", config.Logging["LogLevel"].(string))
 	//fmt.Println(config.Logging["Product"])
 	//fmt.Println(config.Logging["NullPoint"])
 
