@@ -1,0 +1,44 @@
+Manager:
+  role: "admin"
+  server-name: "test-server"
+  ethernet-interface: "eth0"
+  recover-mode: "auto"
+  process-scan-time: 1
+  process-list: [
+    "process-1",
+    "process-2",
+    "process-3",
+    "process-4"
+  ]
+
+process-1:
+  running: "attach"
+  mode: "-d"
+  path: "./bin/process1"
+  heartbeat:
+    use: "Y"
+    url: "localhost:7777/heartbeat"
+
+process-2:
+  running: "attach"
+  mode: "-d"
+  path: "./bin/process2"
+  heartbeat:
+    use: "Y"
+    url: "localhost:7777/heartbeat"
+
+process-3:
+  running: "attach"
+  mode: "-d"
+  path: "./bin/process3"
+  heartbeat:
+    use: "Y"
+    url: "localhost:7777/heartbeat"
+
+process-4:
+  running: "attach"
+  mode: "-d"
+  path: "./bin/process4"
+  heartbeat:
+    use: "Y"
+    url: "localhost:7777/heartbeat"
