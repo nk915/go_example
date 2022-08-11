@@ -9,34 +9,17 @@ import (
 
 type User struct {
 	Name    string `json:"name,omitempty" xml:"name" param:"name"`
-	Address string `json:"" xml:"address" param:"address"`
+	Address string `json:"address" xml:"address" param:"address"`
+	Num     int32  `json:"num" xml:"num" param:"num"`
 	Test    string `json:"test,omitempty" xml:"test" param:"test"`
 	Age     string `json:"age,omitempty"`
 }
 
-type UserA struct {
-	Name    *string `json:"name,omitempty" xml:"name" param:"name"`
-	Address *string `json:"address,omitempty" xml:"address" param:"address"`
-	Test    *string `json:"test,omitempty" xml:"test" param:"test"`
-	Age     *string `json:"age,omitempty"`
-}
-
 func main() {
-	//	t := reflect.TypeOf(User{})
-	//	for i := 0; i < t.NumField(); i++ {
-	//		v, ok := t.Field(i).Tag.Lookup("json")
-	//		if ok {
-	//			fmt.Printf("(%14s) is Json Field : %s\n", t.Field(i).Name, v)
-	//		}
-	//		v, ok = t.Field(i).Tag.Lookup("xml")
-	//		if ok {
-	//			fmt.Printf("(%14s) is xml Field : %s\n", t.Field(i).Name, v)
-	//		}
-	//	}
-
 	user := User{
 		Name:    "nk915",
 		Address: "Seoul",
+		Num:     123,
 		Age:     "",
 		Test:    "",
 	}
@@ -63,27 +46,15 @@ func main() {
 	*/
 
 	for i := 0; i < ref.NumField(); i++ {
-		//	v, ok := ref.Type().Field(i).Tag.Lookup("param")
-		//	if ok && len(ref.Field(i).String()) > 0 {
-		//		fmt.Printf("v(%s) --> %s : %s\n", v, ref.Type().Field(i).Tag.Get("param"), ref.Field(i))
-		//		params.Add(v, ref.Field(i).String())
-		//		//fmt.Printf("(%14s) is Json Field : %s \n", ref.Field(i).Name, v)
-		//	}
-
-		v, ok := ref.Type().Field(i).Tag.Lookup("json")
-		if ok && len(ref.Field(i).String()) > 0 {
+		key, ok := ref.Type().Field(i).Tag.Lookup("json")
+		value := fmt.Sprintf("%v", ref.Field(i))
+		if ok && len(value) > 0 {
 			//fmt.Printf("v(%s) --> %s : %s\n", v, ref.Type().Field(i).Tag.Get("json"), ref.Field(i))
-
-			if len(strings.Split(v, ",")[0]) > 0 {
-				fmt.Printf("%s : %s \n", strings.Split(v, ",")[0], ref.Field(i))
+			if len(strings.Split(key, ",")[0]) > 0 {
+				fmt.Printf("%s : %s \n", strings.Split(key, ",")[0], value)
 			}
 
 		}
-
-		//		v, ok = ref.Field(i).Tag.Lookup("xml")
-		//		if ok {
-		//			fmt.Printf("(%14s) is xml Field : %s \n", ref.Field(i).Name, v)
-		//		}
 	}
 
 	fmt.Println(len(params))
