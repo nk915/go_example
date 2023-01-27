@@ -1,0 +1,11 @@
+---
+- name: Master Node task - STEP 1
+  hosts: INFRAWARE 
+  become: true
+#  vars:
+#    - system_type: "infraware"
+  tasks:
+    - name: Debug variables
+      debug:
+        #msg: "{{ hostvars['172.16.1.7']['inventory_dir']}}"
+        msg: "{{ hostvars['175.45.195.112'] }}"
