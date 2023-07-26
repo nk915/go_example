@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"regexp"
 	"strings"
 
 	"github.com/apenella/go-ansible/pkg/adhoc"
@@ -20,8 +21,24 @@ type Inventory struct {
 }
 
 func main() {
-	makeInventory(inventory())
-	ansiblePlay()
+	mac()
+	//	makeInventory(inventory())
+	//	ansiblePlay()
+}
+
+func mac() {
+	mac := "AA:BB:CC:DD:EE:FF"
+	fmt.Println(regexp.MustCompile(`:`).ReplaceAllString(mac, ""))
+
+	ports := func(n string) string {
+		if strings.EqualFold(n, "0") {
+			return ""
+		}
+		return n
+	}
+	fmt.Println(ports("1-65535"))
+	fmt.Println(ports("0"))
+
 }
 
 func ansiblePlay() {

@@ -12,9 +12,36 @@ type User struct {
 	Age          int32
 	EmployeeCode int64 `copier:"EmployeeNum"` // specify field name
 	Test         string
+	SystemId     string
 
+	Index int32
 	// Explicitly ignored in the destination struct.
 	Salary int
+}
+
+type User2 struct {
+	Name         *string
+	Role         *string
+	Age          int32
+	EmployeeCode *int64 `copier:"EmployeeNum"` // specify field name
+	Test         string
+	SystemType   string `copier:"SystemId"`
+	Index        int16
+	// Explicitly ignored in the destination struct.
+	Salary int
+}
+
+func main() {
+	//	test_1()
+	test_3()
+}
+
+func test_3() {
+	from := User2{SystemType: "AA", Index: 123}
+	to := User{}
+
+	copier.Copy(&to, from)
+	fmt.Println(to)
 }
 
 func (user *User) DoubleAge() int32 {
@@ -43,7 +70,20 @@ func (employee *Employee) Role(role string) {
 	employee.SuperRole = "Super " + role
 }
 
-func main() {
+func test_1() {
+	from := User{Name: "Jinzhu", Age: 18, Role: "Admin", Salary: 200000, Test: "TEST"}
+	to := User2{}
+
+	fmt.Println(from)
+	fmt.Println(to)
+
+	copier.CopyWithOption(&to, &from, copier.Option{IgnoreEmpty: true, DeepCopy: true})
+
+	fmt.Println(to)
+
+}
+
+func test_2() {
 	var (
 		user      = User{Name: "Jinzhu", Age: 18, Role: "Admin", Salary: 200000, Test: "TEST"}
 		users     = []User{{Name: "Jinzhu", Age: 18, Role: "Admin", Salary: 100000}, {Name: "jinzhu 2", Age: 30, Role: "Dev", Salary: 60000}}

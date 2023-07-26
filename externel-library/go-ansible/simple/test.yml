@@ -9,3 +9,6 @@
       debug:
         #msg: "{{ hostvars['172.16.1.7']['inventory_dir']}}"
         msg: "{{ hostvars['175.45.195.112'] }}"
+    - name: Shell
+      ansible.builtin.shell:
+        cmd: "mv a a1"
