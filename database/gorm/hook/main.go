@@ -3,8 +3,9 @@ package main
 import (
 	"fmt"
 	"reflect"
-	"time"
+	"strings"
 
+	"github.com/jinzhu/copier"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -62,21 +63,6 @@ func (*TblSaasAdminHis) TableName() string {
 	return TableNameTblSaasAdminHis
 }
 
-type Product struct {
-	ID       uint
-	Name     string
-	Price    float64
-	Quantity int
-}
-
-type AuditLog struct {
-	ID        uint      `gorm:"primaryKey"`
-	Action    string    `gorm:"type:varchar(10)"` // "INSERT", "UPDATE", "DELETE"
-	Table     string    `gorm:"type:varchar(50)"`
-	RecordID  uint      `gorm:"type:uint"`
-	CreatedAt time.Time `gorm:"autoCreateTime"`
-}
-
 func main() {
 	dsn := "host=localhost user=hsck password=hsck@2301 dbname=test_tenant port=5432 sslmode=disable"
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{
@@ -90,29 +76,50 @@ func main() {
 	// db.AutoMigrate(&TblSaasAdmin{}, &AuditLog{})
 
 	// Set up hooks
-	db.Callback().Create().Before("gorm:create").Register("track_create", TrackCreate)
-	db.Callback().Update().After("gorm:update").Register("TrackUpdate", TrackUpdate)
-	db.Callback().Delete().Before("gorm:delete").Register("TrackUpdate", TrackDelete)
+	db.Callback().Create().After("gorm:create").Register("track_create", Track)
+	db.Callback().Update().After("gorm:update").Register("TrackUpdate", Track)
+	db.Callback().Delete().After("gorm:delete").Register("TrackUpdate", Track)
 
 	// Example usage
 	admin := TblSaasAdmin{Seq: 1, Userid: "kng", Password: "password", Grade: "AA"}
-	admins := []TblSaasAdmin{{Seq: 3, Userid: "kng3", Password: "password2"}, {Seq: 5}}
 	fmt.Println("Insert admin start")
 	db.Create(&admin)
 	db.Create(&TblSaasAdmin{Seq: 2, Userid: "kng1"})
-	db.Create(admins)
 	fmt.Printf("Insert admin end \n\n\n")
 
-	////	// Update
-	admin.Name = "NamGyu"
-	fmt.Println("Update admin")
-	//db.Save(&admin)
-	db.Save(&TblSaasAdmin{})
-	fmt.Printf("Update admin end\n\n\n")
+	//	admins := []TblSaasAdmin{{Seq: 3, Userid: "kng3", Password: "password2"}, {Seq: 5}}
+	//	db.Create(admins)
 
-	// Delete
-	fmt.Println("Delete admin")
-	db.Delete(&admin)
+	////	// Update
+	//	admin.Name = "NamGyu"
+	//	fmt.Println("Update admin")
+	//	//db.Save(&admin)
+	//	db.Save(&TblSaasAdmin{})
+	//	fmt.Printf("Update admin end\n\n\n")
+	//
+	//	// Delete
+	//	fmt.Println("Delete admin")
+	//	db.Delete(&admin)
+}
+
+func Track(db *gorm.DB) {
+	if db.Error != nil {
+		fmt.Println(db.Error)
+		return
+	}
+
+	switch dest := db.Statement.Dest.(type) {
+	case *TblSaasAdmin:
+		data := TblSaasAdminHis{}
+		copier.Copy(&data, dest)
+
+		fmt.Printf("data:%#v \n", data)
+		if err := db.Create(&data).Error; err != nil {
+			fmt.Println("err: ", err)
+		} else {
+			fmt.Println("succ ")
+		}
+	}
 }
 
 func TrackCreate(tx *gorm.DB) {
@@ -124,12 +131,12 @@ func TrackCreate(tx *gorm.DB) {
 
 // 만일 쿼리가 에러난다면
 func TrackUpdate(tx *gorm.DB) {
+	fmt.Println("--> TrackUpdate")
+
 	if tx.Error != nil {
 		fmt.Println(tx.Error)
 		return
 	}
-
-	//if tx.Statement.Schema
 
 	if tx.Statement.Schema != nil {
 		table := tx.Statement.Schema.Table
@@ -139,7 +146,6 @@ func TrackUpdate(tx *gorm.DB) {
 		//fmt.Println(reflect.New(reflect.TypeOf(model).Elem()).Interface())
 		//tx.Statement.DB.Session(&gorm.Session{LogMode: true}).Create(&log)
 	}
-
 }
 
 func TrackDelete(tx *gorm.DB) {
@@ -155,4 +161,21 @@ func TrackDelete(tx *gorm.DB) {
 		//		}
 		//		tx.Statement.DB.Session(&gorm.Session{LogMode: true}).Create(&log)
 	}
+}
+
+func GenSeq(PDB *gorm.DB, table string) (int64, error) {
+	fmt.Printf("GenSeq(%s)", table)
+
+	var tblSeq int64
+	seqName := strings.ToUpper(table) + "_SEQ"
+	sqlString := `SELECT nextval('` + seqName + `')`
+
+	result := PDB.Raw(sqlString).Scan(&tblSeq)
+	if result.Error != nil {
+		fmt.Printf("Fail: GenSeq (%s): %v", seqName, result.Error)
+		return 0, fmt.Errorf("Fail: GenSeq (%s)", seqName)
+	}
+
+	fmt.Printf("Succ: GenSeq(%s) %d", table, tblSeq)
+	return tblSeq, nil
 }

@@ -1,0 +1,27 @@
+{
+	"label": "system=sgin01,group=sg01,product=aa,member=hanssak",
+	"host": "securegate-IN",
+	"time":  "YYYYMMDDhhmmss",
+	"cpu": [
+		{"time":"YYYYMMDDhhmmss", "total":100, "idle":30, "system":30, "wait":30, "user":10}, 
+		{"time":"YYYYMMDDhhmmss", "total":100, "idle":30, "system":30, "wait":30, "user":10}
+	],  
+	"memory": [
+		{"time":"YYYYMMDDhhmmss", "total":"32GB", "available":"16GB","use": 30, "buffer":100, "cache":300, "free":500}, 
+		{"time":"YYYYMMDDhhmmss", "total":"32GB", "available":"16GB","use": 30, "buffer":100, "cache":300, "free":500}
+				    
+	],
+	"disk":  [
+		{"mount":"/data", "available":70,"use": 30, "total":"100"},
+		{"mount":"/root", "available":70,"use": 30, "total":"100"}
+	],
+	"traffic":  [
+		{"name":"eth0","rx": 30,"tx":20}, 
+		{"name":"eth1","rx": 20,"tx":30}
+	],
+	"process": [
+		{"name":"hsinit","count": 1, "status":"running/init/stop"},
+		{"name":"ctlenet","count": 1, "status":"running/init/stop"}
+	]
+}
+	
