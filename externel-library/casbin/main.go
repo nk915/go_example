@@ -5,19 +5,38 @@ import (
 	"net/http"
 
 	"github.com/casbin/casbin/v2"
+	gormadapter "github.com/casbin/gorm-adapter/v3"
 	"github.com/gin-contrib/authz"
 	"github.com/gin-gonic/gin"
+	"gorm.io/driver/postgres"
+	"gorm.io/gorm"
 )
 
-func main() {
-	r := gin.Default()
+// Increase the column size to 512.
+type CasbinRule struct {
+	ID    uint   `gorm:"primaryKey;autoIncrement"`
+	Ptype string `gorm:"size:512;uniqueIndex:unique_index"`
+	V0    string `gorm:"size:512;uniqueIndex:unique_index"`
+	V1    string `gorm:"size:512;uniqueIndex:unique_index"`
+	V2    string `gorm:"size:512;uniqueIndex:unique_index"`
+	V3    string `gorm:"size:512;uniqueIndex:unique_index"`
+	V4    string `gorm:"size:512;uniqueIndex:unique_index"`
+	V5    string `gorm:"size:512;uniqueIndex:unique_index"`
+}
 
-	enforcer, err := casbin.NewEnforcer("rbac_model.conf", "rbac_policy.csv")
+func main() {
+	enforcer, err := getEnforcerByFile()
 	if err != nil {
-		fmt.Printf("err: %v\n", err)
+		fmt.Println(err)
 		return
 	}
 
+	policies := enforcer.GetPolicy()
+	for _, policy := range policies {
+		fmt.Println("--> ", policy)
+	}
+
+	r := gin.Default()
 	r.Use(func(c *gin.Context) {
 		sub := "alice"            // the user that wants to access a resource.
 		obj := c.Request.URL.Path // the resource that is going to be accessed.
@@ -47,6 +66,26 @@ func main() {
 
 	r.Run(":8080")
 
+}
+
+func getEnforcerByDB() (*casbin.Enforcer, error) {
+	// @ = %40
+	db, err := gorm.Open(postgres.Open("host=192.168.1.205 port=5432 user=hsck password=hsck@2301 database=test_tenant sslmode=disable"), &gorm.Config{})
+	if err != nil {
+		return nil, err
+	}
+
+	a, err := gormadapter.NewAdapterByDBWithCustomTable(db, &CasbinRule{}, "saas.casbin_rule")
+	if err != nil {
+		return nil, err
+	}
+
+	return casbin.NewEnforcer("rbac_model.conf", a)
+
+}
+
+func getEnforcerByFile() (*casbin.Enforcer, error) {
+	return casbin.NewEnforcer("rbac_model.conf", "rbac_policy.csv")
 }
 
 func casbin_authz() {
