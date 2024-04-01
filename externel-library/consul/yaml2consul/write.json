@@ -1,0 +1,22 @@
+{
+	"namespace/test": {
+		"aa":1,
+		"bb":2
+	},
+	"namespace/test2": {
+		"cc": {
+			"123":1
+		}
+	},
+	"namespace/aa":{
+		"list": [
+			1,
+			2,
+			4
+		]
+	},
+	"namespace/array":[
+		1,2,3
+	],
+	"namespace/empty":""
+}

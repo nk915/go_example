@@ -12,20 +12,17 @@ import (
 	"gorm.io/gorm"
 )
 
-// Increase the column size to 512.
-type CasbinRule struct {
-	ID    uint   `gorm:"primaryKey;autoIncrement"`
-	Ptype string `gorm:"size:512;uniqueIndex:unique_index"`
-	V0    string `gorm:"size:512;uniqueIndex:unique_index"`
-	V1    string `gorm:"size:512;uniqueIndex:unique_index"`
-	V2    string `gorm:"size:512;uniqueIndex:unique_index"`
-	V3    string `gorm:"size:512;uniqueIndex:unique_index"`
-	V4    string `gorm:"size:512;uniqueIndex:unique_index"`
-	V5    string `gorm:"size:512;uniqueIndex:unique_index"`
+func main() {
+
+	//istioGrpcCheck()
+	httpCheck()
+	//dbCallback()
 }
 
-func main() {
-	enforcer, err := getEnforcerByFile()
+func httpCheck() {
+	//enforcer, err := getEnforcerByFile()
+	enforcer, err := getEnforcerByDB("host=192.168.1.205 port=5432 user=hsck password=hsck@2301 database=test_tenant sslmode=disable")
+
 	if err != nil {
 		fmt.Println(err)
 		return
@@ -65,12 +62,27 @@ func main() {
 	})
 
 	r.Run(":8080")
-
 }
 
-func getEnforcerByDB() (*casbin.Enforcer, error) {
+func getEnforcerByFile() (*casbin.Enforcer, error) {
+	return casbin.NewEnforcer("rbac_model.conf", "rbac_policy.csv")
+}
+
+func getEnforcerByDB(conn string) (*casbin.Enforcer, error) {
+	// Increase the column size to 512.
+	type CasbinRule struct {
+		ID    uint   `gorm:"primaryKey;autoIncrement"`
+		Ptype string `gorm:"size:512;uniqueIndex:unique_index"`
+		V0    string `gorm:"size:512;uniqueIndex:unique_index"`
+		V1    string `gorm:"size:512;uniqueIndex:unique_index"`
+		V2    string `gorm:"size:512;uniqueIndex:unique_index"`
+		V3    string `gorm:"size:512;uniqueIndex:unique_index"`
+		V4    string `gorm:"size:512;uniqueIndex:unique_index"`
+		V5    string `gorm:"size:512;uniqueIndex:unique_index"`
+	}
+
 	// @ = %40
-	db, err := gorm.Open(postgres.Open("host=192.168.1.205 port=5432 user=hsck password=hsck@2301 database=test_tenant sslmode=disable"), &gorm.Config{})
+	db, err := gorm.Open(postgres.Open(conn), &gorm.Config{})
 	if err != nil {
 		return nil, err
 	}
@@ -82,10 +94,6 @@ func getEnforcerByDB() (*casbin.Enforcer, error) {
 
 	return casbin.NewEnforcer("rbac_model.conf", a)
 
-}
-
-func getEnforcerByFile() (*casbin.Enforcer, error) {
-	return casbin.NewEnforcer("rbac_model.conf", "rbac_policy.csv")
 }
 
 func casbin_authz() {
