@@ -1,0 +1,3144 @@
+{
+  "namespace/service/agent/E001/OPENNETLINK-1.0.0.1-WINDOWS/conf-bind": {
+    "AGENTCONF-BINDACK": [
+      {
+        "bUseIDAsInitPassword": {
+          "desc": "# 초기 password 사용자ID를 사용할지 유무",
+          "tag_value": "false",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "strInitPasswd": {
+          "desc": "# 초기 password 암호화한 값",
+          "tag_value": "1K27SdexltsW0ubSCJgsZw==",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        }
+      }
+    ]
+  },
+  "namespace/service/agent/E001/OPENNETLINK-1.0.0.1-WINDOWS/conf-ready": {
+    "AGENTCONF-READYACK": [
+      {
+        "KEEP_ALIVE": {
+          "desc": "# keep alive message interval in seconds",
+          "tag_value": "7",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "RTSP_PORT": {
+          "desc": "# rtsp listener port",
+          "tag_value": "554",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "WAIT_TIME": {
+          "desc": "# thread wait interval in useconds",
+          "tag_value": "250",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        }
+      }
+    ]
+  },
+  "namespace/service/agent/E001/OPENNETLINK-1.0.0.1-WINDOWS/conf-ready-appenv": {
+    "USERCONF-READYACK": [
+      {
+        "KEEP_ALIVE": {
+          "desc": "# keep alive message interval in seconds",
+          "tag_value": "7",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "RTSP_PORT": {
+          "desc": "# rtsp listener port",
+          "tag_value": "554",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "WAIT_TIME": {
+          "desc": "# thread wait interval in useconds",
+          "tag_value": "250",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        }
+      }
+    ]
+  },
+  "namespace/service/agent/E001/OPENNETLINK-1.0.0.1-WINDOWS/imageconf-ready": {
+    "AGENTIMAGECONF-READYACK": [
+      {
+        "CI_SITELOGO": {
+          "desc": "# 로그인화면에 나타나는 SITE Ci",
+          "tag_value": "/images/ci/sitelogo.png",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "RES_SERVER_PATH": {
+          "desc": "# 다운로드하는 이미지 앞경로",
+          "tag_value": "https://.....",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "UI_SIDEBAR_LOGOS": {
+          "desc": "# 로그인후",
+          "tag_value": "/images/adminlte/logo_s.png",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        },
+        "WINDOW_ICON": {
+          "desc": "# 윈도우 agent Title / Tray에 보이는 아이콘",
+          "tag_value": "SecureGate.ico",
+          "update_time": "20240101000000",
+          "writer": "Webmanager"
+        }
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/E001/aggregateId": {
+    "ID": {
+      "approve": "114",
+      "disposer": "0",
+      "meta": "0",
+      "postwork": "0",
+      "prework": "0",
+      "provider": "15",
+      "speaker": "0",
+      "thridparty": "0",
+      "transfer": "3",
+      "view": "5"
+    }
+  },
+  "namespace/service/sgate/EX/E001/approve": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "approve.log",
+      "ModifyTime": "",
+      "Process": "approve",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/ctlenet10g": {
+    "CONFIG": {
+      "dest_ip": "192.168.41.100",
+      "dest_mac": "08002736e7c6",
+      "enable_compact_resource": 0,
+      "enable_direct": 0,
+      "enc_pkt_mode": 1,
+      "file_check_mode": 2,
+      "keepalive_interval": 0,
+      "log_level": 0,
+      "nic_mtu": 1500,
+      "protocol_id": 253,
+      "rcv_test_mode": 1,
+      "service_devices": "enp0s8,enp0s9",
+      "skip_file_trans": 0,
+      "snd_threshold": 4,
+      "ttl": 4
+    }
+  },
+  "namespace/service/sgate/EX/E001/disposer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "disposer.log",
+      "ModifyTime": "",
+      "Process": "disposer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/hostagent": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "hostagent.log",
+      "ModifyTime": "",
+      "Process": "hostagent",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    },
+    "TIMER": {
+      "SendInterval": 20,
+      "bSendEnable": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/meta": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "meta.log",
+      "ModifyTime": "",
+      "Process": "meta",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/prework": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "prework.log",
+      "ModifyTime": "",
+      "Process": "prework",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/provider": {
+    "CONFIG": {
+      "GroupId": "provier",
+      "LogLevel": "debug",
+      "ModifyTime": "",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/speaker": {
+    "CONFIG": {
+      "GroupId": "speaker",
+      "LogLevel": "debug",
+      "ModifyTime": "2012",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 11,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "MAINCD",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "E001"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/E001/thirdparty": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "thirdparty.log",
+      "ModifyTime": "",
+      "Process": "thirdparty",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E001/view": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "view.log",
+      "ModifyTime": "",
+      "Process": "view",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/aggregateId": {
+    "ID": {
+      "approve": "8",
+      "disposer": "0",
+      "meta": "0",
+      "postwork": "0",
+      "prework": "0",
+      "provider": "154",
+      "speaker": "0",
+      "thridparty": "0",
+      "transfer": "0",
+      "view": "0"
+    }
+  },
+  "namespace/service/sgate/EX/E002/approve": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "approve.log",
+      "ModifyTime": "",
+      "Process": "approve",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/disposer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "disposer.log",
+      "ModifyTime": "",
+      "Process": "disposer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/hostagent": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "hostagent.log",
+      "ModifyTime": "",
+      "Process": "hostagent",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    },
+    "TIMER": {
+      "SendInterval": 20,
+      "bSendEnable": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/meta": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "meta.log",
+      "ModifyTime": "",
+      "Process": "meta",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/prework": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "prework.log",
+      "ModifyTime": "",
+      "Process": "prework",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/provider": {
+    "CONFIG": {
+      "GroupId": "provier",
+      "LogLevel": "debug",
+      "ModifyTime": "",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/speaker": {
+    "CONFIG": {
+      "GroupId": "speaker",
+      "LogLevel": "debug",
+      "ModifyTime": "2012",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 11,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "MAINCD",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "E002"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/E002/thirdparty": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "thirdparty.log",
+      "ModifyTime": "",
+      "Process": "thirdparty",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/E002/view": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "view.log",
+      "ModifyTime": "",
+      "Process": "view",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/EX/common/dbconfig": {
+    "DB_ENV": {
+      "db_conn": [
+        "host=192.168.20.110 port=5432 user=hsck password=hsck@2301 sslmode=disable",
+        "host=192.168.20.111 port=5432 user=hsck password=hsck@2301 sslmode=disable"
+      ],
+      "test": "2",
+      "version": "postgresql-14"
+    }
+  },
+  "namespace/service/sgate/EX/common/filemon": {
+    "CONFIG": {
+      "log_level": 15
+    }
+  },
+  "namespace/service/sgate/EX/common/hsinit": {
+    "CONFIG": {
+      "keepalive_interval": 3,
+      "log_level": 15
+    }
+  },
+  "namespace/service/sgate/EX/common/kafkaconfig": {
+    "KAFKA": {
+      "broker": [
+        "192.168.20.120",
+        "192.168.20.121"
+      ]
+    }
+  },
+  "namespace/service/sgate/EX/common/man": {
+    "TASK_INFO": [
+      {
+        "h_desc": "시스템 환경정보 관리",
+        "mc": "0",
+        "name": "hsinit",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "hsinit",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "file전송 요청자료 관리",
+        "mc": "0",
+        "name": "filemon",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "filemon",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "system data control daemon",
+        "mc": "0",
+        "name": "syscntl",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "syscntl",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "streaming listen daemon",
+        "mc": "30",
+        "name": "strlisten",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "strlisten",
+        "task_type": "1",
+        "taskcount": "11"
+      },
+      {
+        "h_desc": "streaming connect daemon",
+        "mc": "20",
+        "name": "strconnect",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "strconnect",
+        "task_type": "1",
+        "taskcount": "11"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/common/otelconfig": {
+    "OTEL": {
+      "otel_conn": "192.168.20.110:4317"
+    }
+  },
+  "namespace/service/sgate/EX/common/prework-list": {
+    "prework_list": [
+      {
+        "ex_approval_policy_action": "and",
+        "prework_order": 1,
+        "product_name": "V3",
+        "product_vendor": "Ahnlab",
+        "product_version": "1.0.0",
+        "scan_type": "Anti-virus"
+      },
+      {
+        "ex_approval_policy_action": "and",
+        "prework_order": 2,
+        "product_name": "FireEye",
+        "product_vendor": "FireEye",
+        "product_version": "1.0.0",
+        "scan_type": "APT"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/common/scan-directory": {
+    "SCAN_DIRECTORY": [
+      {
+        "dir_type": "2",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "save_path": "-",
+        "save_type": "1",
+        "scan_cycle": "60",
+        "scan_desc": "내부-자동승인 작업 [PC to PC]",
+        "scan_dir": "/hrx/data/mPcUser",
+        "sdir_mid": "201003010300005006",
+        "svc_mid": "201003010300000006",
+        "writer": "202308110800000003"
+      },
+      {
+        "dir_type": "1",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "save_path": "-",
+        "save_type": "1",
+        "scan_cycle": "60",
+        "scan_desc": "내부-자동승인 작업 [PC to PC]",
+        "scan_dir": "/hrx/data/cPcUser",
+        "sdir_mid": "201003010300005005",
+        "svc_mid": "0",
+        "writer": "202308110800000003"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/common/shared-volume": {
+    "SVC_GROUP": [
+      {
+        "block_mtype": "1",
+        "blockcount": "2",
+        "blockno": "0",
+        "checksum": "2",
+        "datablockno": "0",
+        "datadevname": "",
+        "datasize": "0",
+        "devname": "/dev/raw/raw3",
+        "devstat": "1",
+        "devtype": "1",
+        "rradd_num": "1280",
+        "rrmax_num": "12800",
+        "rrntime": "1",
+        "security": "2",
+        "start_tid": "1",
+        "startblockno": "0",
+        "svc_id": "1",
+        "vol_id": "201003010550000003"
+      },
+      {
+        "block_mtype": "1",
+        "blockcount": "1",
+        "blockno": "0",
+        "checksum": "2",
+        "datablockno": "0",
+        "datadevname": "",
+        "datasize": "0",
+        "devname": "/dev/raw/raw13",
+        "devstat": "1",
+        "devtype": "2",
+        "rradd_num": "1280",
+        "rrmax_num": "12800",
+        "rrntime": "1",
+        "security": "2",
+        "start_tid": "1",
+        "startblockno": "0",
+        "svc_id": "11",
+        "vol_id": "201003010550000013"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/common/strlisten": {
+    "CONFIG": {
+      "file_log": 0,
+      "log_level": 15,
+      "max_client_count": 200,
+      "max_master_count": 1,
+      "max_slave_count": 1
+    }
+  },
+  "namespace/service/sgate/EX/common/svc-port": {
+    "SVC_PORT": [
+      {
+        "connect_log": "3",
+        "in_ip": "255.255.255.255",
+        "in_ip_len": "0",
+        "in_port": "5432",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "mon_flag": "1",
+        "out_ip": "0.0.0.0",
+        "out_port": "0",
+        "rxtx_check": "0",
+        "svc_desc": "DB 연계",
+        "svc_mid": "201003010150000001",
+        "svc_mod": "0",
+        "svc_type": "1",
+        "writer": "201004010800000002"
+      }
+    ]
+  },
+  "namespace/service/sgate/EX/common/syscntl": {
+    "CONFIG": {
+      "log_level": 15,
+      "network_check_flag": 0,
+      "ping_wait_time": 500,
+      "signal_link_log": 0,
+      "time_req_flag": 1,
+      "time_udp_flag": 1
+    }
+  },
+  "namespace/service/sgate/EX/common/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "ADALDAPSVR",
+        "tag_desc": "AD/LDAP Server 정보 / - 서버 사용 / Login 기능",
+        "tag_value": "hsckAD.com192.168.1.232:389"
+      },
+      {
+        "tag": "AFTERAPPROVE",
+        "tag_desc": "사후 결재 사용 가능 유무 / 서버 + Agent 사용 / bind Ack 전송 _ 화면구성",
+        "tag_value": "none/none"
+      },
+      {
+        "tag": "AFTERAPPROVE_NOTI_DAY",
+        "tag_desc": "Agent 사후 결제 누적 알람 / 서버 사용/ 조회 기준 정보를 Agent 전송함.",
+        "tag_value": "25/30"
+      },
+      {
+        "tag": "AFTERAPPROVEFILE",
+        "tag_desc": "사후 결재 이후에 결재자가 미리 보기 기능 할수 있는 기능 / 서버 사용 / 계산 결과 값만 Agent 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "AFTERAPPROVEMAXCOUNT",
+        "tag_desc": "경고일 기준 Count / Agent 사용 / Bind Ack 전송 _ 기안자 결제자 기준 Count",
+        "tag_value": "1/500"
+      },
+      {
+        "tag": "ALARMAUTH",
+        "tag_desc": "관리자에게 CPU.dislk.memory 알람 전송 / Webmanager / webmanager에서 설정 하는 방안으로 ..",
+        "tag_value": "root@localhost"
+      },
+      {
+        "tag": "APPROVEPROXY",
+        "tag_desc": "조회 시 대 결제자 조회시 사용 / server + Agent 사용 / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "APPROVEPROXYRIGHT",
+        "tag_desc": "일반 사용자 결재 등록 가능하도록 설정 / Agent 사용 / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "APPROVESTEP",
+        "tag_desc": "기본 결재 정보 전송 시 설정 기준으로 Bind Ack 전송함. / Server + Agent 사용 / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "APPROVETYPESFM",
+        "tag_desc": "실제 결재한 결재자 정보 표시 하기 위한 설정 / Agent 사용 / Bind Ack 전송 _ 대 결재자 재공 방식으로 필요함.",
+        "tag_value": "1"
+      },
+      {
+        "tag": "APPROVEUSETYPE",
+        "tag_desc": "전체 결재자 설정 , Bind_ack 기본 결재 라인 정보 전송 유무/ 서버 + Agent 사용 / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "AUTHUSER",
+        "tag_desc": "비밀번호 규칙 / 서버 + Agent 사용 / ready 전송 필요함",
+        "tag_value": "N50000"
+      },
+      {
+        "tag": "BACKUPSAVECYCLE",
+        "tag_desc": "백업 File 만료 시간 / 서버 /",
+        "tag_value": "90"
+      },
+      {
+        "tag": "BASEDIR",
+        "tag_desc": "기본 설정 Home Dir/ 서버 /",
+        "tag_value": "/home/hsck"
+      },
+      {
+        "tag": "BASELOGDIR",
+        "tag_desc": "기본 설정 Log Dir/ 서버 /",
+        "tag_value": "/hrx/log/hrxlog"
+      },
+      {
+        "tag": "BASEMEMADDR",
+        "tag_desc": "공유 메모리 정보 설정/ 서버 /",
+        "tag_value": "0x0,0x50000000"
+      },
+      {
+        "tag": "CHECKSKIPLIST",
+        "tag_desc": "예외 파일 설정 처리 / 미사용",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_BINARY_CHECK",
+        "tag_desc": "확장자 변경 시 검출 설정 / Agent / Bind _ Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_BINARY_CHECK_EXT",
+        "tag_desc": "확장자 변경 시 검출 대상 / Agent / Bind _Ack 전송",
+        "tag_value": "exe;zip"
+      },
+      {
+        "tag": "CLIENT_DESC_MIN_LENGTH",
+        "tag_desc": "설명 최서 설정 / Agent / Bind_Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_FILECHECK_EXCEPTION",
+        "tag_desc": "Agent 파일 검사 예외 신청 / 미 사용",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_MANAGER_INFO",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT_EXT",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "ODT;ODS;ODP;DOC;DOCM;DOCX;DOT;DOTM;DOTX;RTF;XLS;XLSB;XLSM;XLSX;XLT;XLTM;XLTX;XLW;POT;PPT;POTM;POTX;PPS;PPSM;PPSX;PPTM;PPTX;HML;HWP;HWPX"
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT_MTYPE",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "B"
+      },
+      {
+        "tag": "CLIENT_PREVIEW_VIEWER_EXT",
+        "tag_desc": "미리 보기 확장자 정보 / Agent / Bind Ack 전송",
+        "tag_value": "pdf;docx;doc;pptx;ppt;xlsx;xls;xlw;xlsb;xlsm;csv;dbf;dif;slk;sylk;prn;ods;fods;gif;jpg;jpeg;bmp;tiff;tif;png;svg;txt;log"
+      },
+      {
+        "tag": "CLIENT_PRIVACY_COMMENT",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_TITLE_MIN_LENGTH",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_TRANSFER_DESCRIPTION",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "설명을 입력하십시오. (최대 한글 80자, 영문 250자)"
+      },
+      {
+        "tag": "CLIENT_TRANSFER_TITLE",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "제목을 입력하십시오. (최대 한글 80자, 영문 250자)"
+      },
+      {
+        "tag": "CLIENT_URL_FW_PAGE",
+        "tag_desc": "Redirection 시 HTML 위치 파일 정보 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_URLREDIRECTION_F_INFO",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_ZIP_DEPTH",
+        "tag_desc": "zip압축 설정 / Agent / Bind Ack 전송",
+        "tag_value": "3-1"
+      },
+      {
+        "tag": "CLIENTHASHCHECK",
+        "tag_desc": "Agent Version에 대한 Hash check / server / Bind 시 Agent에서 전송 하여 Server 처리 한다.",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENTIPMACCHK",
+        "tag_desc": "Agent 접속 정보 Check / server / Bind 시 Agent에서 전송 하여 Server 처리 한다.",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENTUPGRADE",
+        "tag_desc": "강제 Agent 업데이트[전체 / 부분] / server + Agent / Bind_ Ack",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CMDCOUNT",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "5000"
+      },
+      {
+        "tag": "CMDSIZE",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "512"
+      },
+      {
+        "tag": "CTLRDISKWINC",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CTLRDISKWINCMAX",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "2"
+      },
+      {
+        "tag": "CS_EXCEPTION_EXT_REASON_TYPE",
+        "tag_desc": "예외 확장자 전송 시 글자수 제한 /Agent / Bind_ack 전송",
+        "tag_value": "0/0"
+      },
+      {
+        "tag": "DBBACKUPDIR",
+        "tag_desc": "Database 백업 시 사용 / Webmanager 사용 /",
+        "tag_value": "/home/hsck/dbms/backup"
+      },
+      {
+        "tag": "DBPW",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "127.0.0.1/5432/hsckdb/hsck/hsck2301"
+      },
+      {
+        "tag": "DEPTQUERYTYPE",
+        "tag_desc": "Data Base Function 부서 Tree 생성 및 조회 시 사용 / Server",
+        "tag_value": "3NONEuser_name/user_id"
+      },
+      {
+        "tag": "EXCEPTIONSIZE",
+        "tag_desc": "EXCEPTIONEXT 의 Size 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FILEENCODETYPE",
+        "tag_desc": "파일 인코딩 Type / server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FILEFILTER",
+        "tag_desc": "Server To Server 에서 사용 되는 설정 / Origin Task 사용에 의한 간접 연동 시.. / server",
+        "tag_value": "exe;com;dll"
+      },
+      {
+        "tag": "FILEFILTEREXCEPT",
+        "tag_desc": "Weblink 파일 전송 시 사용 / Server",
+        "tag_value": ""
+      },
+      {
+        "tag": "FILEFILTERTYPE",
+        "tag_desc": "파일 전송 시 사용 / Server+ Agent / bind_Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "FILEMIMECHECK",
+        "tag_desc": "파일 Mine 사용 유무 / server + Agent / Bind_Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "FILEPARTSIZE",
+        "tag_desc": "HSZ 파일 의 송 수신 Packet Size 설정 / origin task / Server + Agent / Bind Ack",
+        "tag_value": "1048576"
+      },
+      {
+        "tag": "FORWARD_AUTODOWN",
+        "tag_desc": "포워드 다운 로드 / Agent / Bind_Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FTPLIMITFLAG",
+        "tag_desc": "????? / server",
+        "tag_value": "1"
+      },
+      {
+        "tag": "FTPRDISKWINC",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FTPRDISKWINCMAX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "15"
+      },
+      {
+        "tag": "GOOGLE_OTP",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "0"
+      },
+      {
+        "tag": "GOOGLE_OTP_PERIOD",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "30"
+      },
+      {
+        "tag": "GOOGLE_OTP_HMAC_TYPE",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "SHA1"
+      },
+      {
+        "tag": "HSZFILEOPTION",
+        "tag_desc": "파일 암호화 압축 / server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "HSZFILEOPTIONSIZE",
+        "tag_desc": "파일 암호화 압축 / server + Agent / Bind Ack 전송",
+        "tag_value": "1024"
+      },
+      {
+        "tag": "INACTIVEUSEROPTION",
+        "tag_desc": "장기 미 접속 설정 확인 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "INTERLOCKFLAG",
+        "tag_desc": "prework list 변경 필요",
+        "tag_value": "0"
+      },
+      {
+        "tag": "LOGINTYPE",
+        "tag_desc": "로그인 설정 / Server + Agent / Ready 전송 시",
+        "tag_value": "AD_LDAP"
+      },
+      {
+        "tag": "LOGPORT",
+        "tag_desc": "Tlog 설정 / Server",
+        "tag_value": "4000"
+      },
+      {
+        "tag": "LOGUAP",
+        "tag_desc": "Tlog 계정 정보 / server",
+        "tag_value": "hsck:hsck2301;bsg:bsg2301"
+      },
+      {
+        "tag": "MAXCLOSEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30"
+      },
+      {
+        "tag": "MAXDOWNLOADCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "MAX_CLIP_SIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "-"
+      },
+      {
+        "tag": "MAXDUMPLEN",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "128"
+      },
+      {
+        "tag": "MAXFILECOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1024"
+      },
+      {
+        "tag": "MAXFILESPLITSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8388608"
+      },
+      {
+        "tag": "MAXFTPWRITEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "600000"
+      },
+      {
+        "tag": "MAXIOBLOCKCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "MAXIOQWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "MAXNETSESSION",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "MAXSTREAMLEASETIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "MAXSTREAMWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "60000"
+      },
+      {
+        "tag": "MAXSTREAMWORKCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30"
+      },
+      {
+        "tag": "NETSTREAMPOLICY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "65536"
+      },
+      {
+        "tag": "NODECOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "250000"
+      },
+      {
+        "tag": "NODESIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "NETLINKCONNTYPE",
+        "tag_desc": "보안 이미지 확인 시 사용 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "NETSTREAMPOLICY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "65536"
+      },
+      {
+        "tag": "NETSTREAMVERSION",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "NOAPPROVECOUNT",
+        "tag_desc": "결재 없이 전송 가능 한 File Count / Agent / Bind Ack 전송",
+        "tag_value": "100"
+      },
+      {
+        "tag": "OTPUSE",
+        "tag_desc": "HANSSAK OTP기능 / Server + Agent / Ready 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "OTHERSERVERINFO",
+        "tag_desc": "origin Task / Server",
+        "tag_value": ""
+      },
+      {
+        "tag": "OTHERSERVEROWNINDEX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "P2PCONTROLMID",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "201003010300005006"
+      },
+      {
+        "tag": "P2PSERVICEMID",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "201003010300005005"
+      },
+      {
+        "tag": "PASSWDEXPIREDDAYS",
+        "tag_desc": "비밀 번호 만료 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PASSWDEXPIREDMETHOD",
+        "tag_desc": "비밀 번호 만료에 대한 안내 창/ Agent / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PATCHMODE",
+        "tag_desc": "update 설정 / server + Agent / Bind _Ack전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PCCHECKSUM",
+        "tag_desc": "HSZ 파일 전송에 대한 송 수신 파일 위변조 검사 / server + Agent / Bind_ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PCDELETECYCLE",
+        "tag_desc": "수신파일 삭제 주기 설정 / Agent / Bind Ack 전송",
+        "tag_value": "14"
+      },
+      {
+        "tag": "PREWORKALLSCAN",
+        "tag_desc": "바이러스 체이서 사용 시 전체 검사 설정 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PRIVACYAPPROVETYPE",
+        "tag_desc": "/ server + Agent / Bind_Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PROJECTNAME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "HREE(E)"
+      },
+      {
+        "tag": "RAWDISKINFO",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1HITACHIDF600F1073741824"
+      },
+      {
+        "tag": "SCANQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5000"
+      },
+      {
+        "tag": "SCHEDULEMAXCOUNT",
+        "tag_desc": "Agnet Patch 시 스케쥴 설정",
+        "tag_value": "100"
+      },
+      {
+        "tag": "SCHEDULEWAITTIME",
+        "tag_desc": "Agnet Patch 시 스케쥴 설정",
+        "tag_value": "10"
+      },
+      {
+        "tag": "SCRLOCKTIME",
+        "tag_desc": "화면 잠금 기능 /Agent / Bind _ Ack 전송",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMCHECKSUM",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "STREAMCLOSEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1500"
+      },
+      {
+        "tag": "STREAMLOOPTIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMMAINLOOP",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10"
+      },
+      {
+        "tag": "STREAMMAXWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "128"
+      },
+      {
+        "tag": "STREAMPACKMIN",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10"
+      },
+      {
+        "tag": "STREAMPACKWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMPOLLLOOP",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1"
+      },
+      {
+        "tag": "STREAMPOLLWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "2"
+      },
+      {
+        "tag": "STREAMSECURITY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "STREAMSECURITYSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "256"
+      },
+      {
+        "tag": "STREAMSOCKOPT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "16"
+      },
+      {
+        "tag": "STRINGRXQSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10485760"
+      },
+      {
+        "tag": "STRINGTXQSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10485760"
+      },
+      {
+        "tag": "STRRXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "STRRXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8192"
+      },
+      {
+        "tag": "STRTXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "STRTXQHEADCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10000"
+      },
+      {
+        "tag": "STRTXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8192"
+      },
+      {
+        "tag": "SYSLOGOPTION",
+        "tag_desc": "재 설계 Log Server 관련 설계 시",
+        "tag_value": "0"
+      },
+      {
+        "tag": "SYSRDISKWINC",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "SYSRDISKWINCMAX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "2"
+      },
+      {
+        "tag": "SYSRXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "SYSRXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "SYSTEMLOOPTIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "SYSTXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "SYSTXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "SYSTYPE",
+        "tag_desc": "system type 내외부 시스템 / server + Agent / Ready 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "URLRECORDTYPE",
+        "tag_desc": "Url 정책 / Agent / Bind _ Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "URLREDIRECTION",
+        "tag_desc": "Url 정책 / Agent / Bind _ Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "USERIDUPPER",
+        "tag_desc": "ID 대소 문자 구분 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "USESECUREIMAGE",
+        "tag_desc": "보안문자 사용 / server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "VCBLKCOUNT",
+        "tag_desc": "origin Task / server",
+        "tag_value": "300"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/approve": {
+    "ID": {
+      "approve": "36",
+      "approveid": "6",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/disposer": {
+    "ID": {
+      "disposer": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/meta": {
+    "ID": {
+      "meta": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/prework": {
+    "ID": {
+      "prework": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/provider": {
+    "ID": {
+      "provider": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/speaker": {
+    "ID": {
+      "speaker": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/thirdparty": {
+    "ID": {
+      "thirdparty": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/transfer": {
+    "ID": {
+      "transactionid": "0",
+      "transfer": "1"
+    }
+  },
+  "namespace/service/sgate/IN/I001/aggregateId/view": {
+    "ID": {
+      "transactionid": "0",
+      "view": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I001/approve": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "approve.log",
+      "ModifyTime": "",
+      "Process": "approve",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/ctlenet10g": {
+    "CONFIG": {
+      "dest_ip": "192.168.40.101",
+      "dest_mac": "0800274541d1",
+      "enable_compact_resource": 0,
+      "enable_direct": 0,
+      "enc_pkt_mode": 1,
+      "file_check_mode": 2,
+      "keepalive_interval": 0,
+      "log_level": 0,
+      "nic_mtu": 1500,
+      "protocol_id": 253,
+      "rcv_test_mode": 1,
+      "service_devices": "enp0s9,enp0s8",
+      "skip_file_trans": 0,
+      "snd_threshold": 4,
+      "ttl": 4
+    }
+  },
+  "namespace/service/sgate/IN/I001/disposer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "disposer.log",
+      "ModifyTime": "",
+      "Process": "disposer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/hostagent": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "hostagent.log",
+      "ModifyTime": "",
+      "Process": "hostagent",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    },
+    "TIMER": {
+      "bSendEnable": false
+    }
+  },
+  "namespace/service/sgate/IN/I001/meta": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "meta.log",
+      "ModifyTime": "",
+      "Process": "meta",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/prework": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "prework.log",
+      "ModifyTime": "",
+      "Process": "prework",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/provider": {
+    "CONFIG": {
+      "GroupId": "provier",
+      "LogLevel": "debug",
+      "ModifyTime": "",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "MAINCD",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "I001"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/I001/thirdparty": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "thirdparty.log",
+      "ModifyTime": "",
+      "Process": "thirdparty",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/transfer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "transfer.log",
+      "ModifyTime": "",
+      "Process": "transfer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I001/view": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "view.log",
+      "ModifyTime": "",
+      "Process": "view",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/approve": {
+    "ID": {
+      "approve": "36",
+      "approveid": "6",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/disposer": {
+    "ID": {
+      "disposer": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/meta": {
+    "ID": {
+      "meta": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/prework": {
+    "ID": {
+      "prework": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/provider": {
+    "ID": {
+      "provider": "95",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/speaker": {
+    "ID": {
+      "speaker": "143",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/thirdparty": {
+    "ID": {
+      "thirdparty": "0",
+      "transactionid": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/transfer": {
+    "ID": {
+      "transactionid": "0",
+      "transfer": "1"
+    }
+  },
+  "namespace/service/sgate/IN/I002/aggregateId/view": {
+    "ID": {
+      "transactionid": "0",
+      "view": "0"
+    }
+  },
+  "namespace/service/sgate/IN/I002/approve": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "approve.log",
+      "ModifyTime": "",
+      "Process": "approve",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/ctlenet10g": {
+    "CONFIG": {
+      "dest_ip": "192.168.50.101",
+      "dest_mac": "0800278e1570",
+      "enable_compact_resource": 0,
+      "enable_direct": 0,
+      "enc_pkt_mode": 1,
+      "file_check_mode": 2,
+      "keepalive_interval": 0,
+      "log_level": 0,
+      "nic_mtu": 1500,
+      "protocol_id": 253,
+      "rcv_test_mode": 1,
+      "service_devices": "enp0s9,enp0s8",
+      "skip_file_trans": 0,
+      "snd_threshold": 4,
+      "ttl": 4
+    }
+  },
+  "namespace/service/sgate/IN/I002/disposer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "disposer.log",
+      "ModifyTime": "",
+      "Process": "disposer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/hostagent": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "hostagent.log",
+      "ModifyTime": "",
+      "Process": "hostagent",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    },
+    "TIMER": {
+      "bSendEnable": false
+    }
+  },
+  "namespace/service/sgate/IN/I002/meta": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "meta.log",
+      "ModifyTime": "",
+      "Process": "meta",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/prework": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "prework.log",
+      "ModifyTime": "",
+      "Process": "prework",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/provider": {
+    "CONFIG": {
+      "GroupId": "provier",
+      "LogLevel": "debug",
+      "ModifyTime": "",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/speaker": {
+    "CONFIG": {
+      "GroupId": "speaker",
+      "LogLevel": "debug",
+      "ModifyTime": "2012",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 11,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "MAINCD",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "I002"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/I002/thirdparty": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "thirdparty.log",
+      "ModifyTime": "",
+      "Process": "thirdparty",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/transfer": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "transfer.log",
+      "ModifyTime": "",
+      "Process": "transfer",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/I002/view": {
+    "CONFIG": {
+      "LogLevel": "info",
+      "LogName": "view.log",
+      "ModifyTime": "",
+      "Process": "view",
+      "Writer": "shhong"
+    },
+    "LOGGER": {
+      "MaxAgeDays": 30,
+      "MaxBakckupsEA": 10,
+      "Maxsizemb": 50,
+      "bCompress": true,
+      "blocalTime": true,
+      "isCaller": true,
+      "isConsole": true
+    }
+  },
+  "namespace/service/sgate/IN/common/dbconfig": {
+    "DB_ENV": {
+      "db_conn": [
+        "host=172.17.0.1 port=5432 user=hsck password=hsck@2301 sslmode=disable"
+      ],
+      "test": "2",
+      "version": "postgresql-14"
+    }
+  },
+  "namespace/service/sgate/IN/common/filemon": {
+    "CONFIG": {
+      "log_level": 15
+    }
+  },
+  "namespace/service/sgate/IN/common/hsinit": {
+    "CONFIG": {
+      "keepalive_interval": 3,
+      "log_level": 15
+    }
+  },
+  "namespace/service/sgate/IN/common/kafkaconfig": {
+    "KAFKA": {
+      "broker": [
+        "192.168.20.110",
+        "192.168.20.111"
+      ]
+    }
+  },
+  "namespace/service/sgate/IN/common/man": {
+    "TASK_INFO": [
+      {
+        "h_desc": "시스템 환경정보 관리",
+        "mc": "0",
+        "name": "hsinit",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "hsinit",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "file전송 요청자료 관리",
+        "mc": "0",
+        "name": "filemon",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "filemon",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "system data control daemon",
+        "mc": "0",
+        "name": "syscntl",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "syscntl",
+        "task_type": "1",
+        "taskcount": "1"
+      },
+      {
+        "h_desc": "streaming listen daemon",
+        "mc": "30",
+        "name": "strlisten",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "strlisten",
+        "task_type": "1",
+        "taskcount": "11"
+      },
+      {
+        "h_desc": "streaming connect daemon",
+        "mc": "20",
+        "name": "strconnect",
+        "parm": "-dl;0x0f",
+        "sc": "0",
+        "task_name": "strconnect",
+        "task_type": "1",
+        "taskcount": "11"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/netagent": {
+    "NETAGENT": [
+      {
+        "tag": "RTSP_PORT",
+        "tag_desc": "rtsp listener port",
+        "tag_value": "554"
+      },
+      {
+        "tag": "WAIT_TIME",
+        "tag_desc": "thread wait interval in useconds",
+        "tag_value": "250"
+      },
+      {
+        "tag": "KEEP_ALIVE",
+        "tag_desc": "keep alive message interval in seconds",
+        "tag_value": "7"
+      },
+      {
+        "tag": "BIND",
+        "tag_desc": "binding address",
+        "tag_value": "10.1.10.101"
+      },
+      {
+        "tag": "LOG_MODE",
+        "tag_desc": "log mode for internal server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "DEBUG_LEVEL",
+        "tag_desc": "set debugging level",
+        "tag_value": "00021000"
+      },
+      {
+        "tag": "EXT_SERVER",
+        "tag_desc": "debugging purpose only",
+        "tag_value": "10.1.10.102"
+      },
+      {
+        "tag": "EXT_SERVER_MAC",
+        "tag_desc": "debugging purpose only",
+        "tag_value": "00-00-00-00-00-00"
+      },
+      {
+        "tag": "STATUS_TIME",
+        "tag_desc": "상태 모니터링",
+        "tag_value": "60"
+      },
+      {
+        "tag": "L4_TIMEOUT",
+        "tag_desc": "L4 session timeout in second",
+        "tag_value": "30"
+      },
+      {
+        "tag": "L4_PROTO",
+        "tag_desc": "L4 Health check protocol",
+        "tag_value": "tcp"
+      },
+      {
+        "tag": "DNS_REDPORT",
+        "tag_desc": "NetStream System Redundancy Port(UDP)",
+        "tag_value": "4003"
+      },
+      {
+        "tag": "URL_RESOLVE",
+        "tag_desc": "URL_RESOLVE",
+        "tag_value": "0"
+      },
+      {
+        "tag": "RES_MONITOR",
+        "tag_desc": "RES_MONITOR",
+        "tag_value": "1"
+      },
+      {
+        "tag": "IPS_PORT",
+        "tag_desc": "IPS_PORT",
+        "tag_value": "1004"
+      },
+      {
+        "tag": "BULKSIZE",
+        "tag_desc": "BULKSIZE",
+        "tag_value": "32"
+      },
+      {
+        "tag": "SITE_VERSION",
+        "tag_desc": "Version(0: Default, 1: NH)",
+        "tag_value": "0"
+      },
+      {
+        "tag": "HASH_TCP_POLICY",
+        "tag_desc": "Hash TCP Policy",
+        "tag_value": "1"
+      },
+      {
+        "tag": "NFQ_MAC",
+        "tag_desc": "NFQ에서 얻은 MAC값 사용하기",
+        "tag_value": "0"
+      },
+      {
+        "tag": "EX_PCS_VIP",
+        "tag_desc": "VirtualIP for EXT server",
+        "tag_value": "$E_VIP$"
+      },
+      {
+        "tag": "IN_PCS_VIP",
+        "tag_desc": "VirtualIP for INT server",
+        "tag_value": "$I_VIP$"
+      },
+      {
+        "tag": "L4_EXT",
+        "tag_desc": "L4 IP:Port for Health check for External Server",
+        "tag_value": "127.0.0.1:4004;"
+      },
+      {
+        "tag": "L4_INT",
+        "tag_desc": "L4 IP:Port for Health check for Internal Server",
+        "tag_value": "127.0.0.1:4004;"
+      },
+      {
+        "tag": "DNS_SKIP",
+        "tag_desc": "bypass DNS packet",
+        "tag_value": "0"
+      },
+      {
+        "tag": "APP_GATEWAY",
+        "tag_desc": "Application Gateway function",
+        "tag_value": "0"
+      },
+      {
+        "tag": "BULKTIME",
+        "tag_desc": "BULKTIME IB:100, Storage:1000",
+        "tag_value": "100"
+      },
+      {
+        "tag": "TCPOPT_CHECKFLAG",
+        "tag_desc": "TCP option : check tcp flag",
+        "tag_value": "0"
+      },
+      {
+        "tag": "TCP_TIMEOUT",
+        "tag_desc": "TCP session timeout in second",
+        "tag_value": "300"
+      },
+      {
+        "tag": "TSR_CRYPT",
+        "tag_desc": "crypt TSR info",
+        "tag_value": "0"
+      },
+      {
+        "tag": "TSR_PORT",
+        "tag_desc": "UDP port to dend/receive Mega",
+        "tag_value": "0"
+      },
+      {
+        "tag": "UDP_TIMEOUT",
+        "tag_desc": "UDP session timeout in second",
+        "tag_value": "100"
+      },
+      {
+        "tag": "DNS_REDLIST",
+        "tag_desc": "NetStream System Redundancy",
+        "tag_value": "192.168.0.1;192.168.0.2"
+      },
+      {
+        "tag": "TCP_BYPASS_PORT",
+        "tag_desc": "any포트정책시 TCP 사용포트 설정",
+        "tag_value": "1300,22,7000,5432"
+      },
+      {
+        "tag": "UDP_BYPASS_PORT",
+        "tag_desc": "any포트정책시 UDP 사용포트 설정",
+        "tag_value": "8008,8009,8010"
+      },
+      {
+        "tag": "EXT_TCP_BYPASS_PORT",
+        "tag_desc": "External any포트정책시 TCP 사용포트 설정",
+        "tag_value": "22"
+      },
+      {
+        "tag": "EXT_UDP_BYPASS_PORT",
+        "tag_desc": "External any포트정책시 UDP 사용포트 설정",
+        "tag_value": ""
+      },
+      {
+        "tag": "LBCOUNT",
+        "tag_desc": "TCP 처리 성능향상 스레드 (1~4)",
+        "tag_value": "1"
+      },
+      {
+        "tag": "GPS_LOGSIZE",
+        "tag_desc": "정책별 통계 모니터링 버퍼크기 ( 1~32, default : 8 )",
+        "tag_value": "2"
+      },
+      {
+        "tag": "NSB_FACTOR",
+        "tag_desc": "내부버퍼크기 ( 1~8, 고속 : 8, 저속 :1 )",
+        "tag_value": "2"
+      },
+      {
+        "tag": "TCP_MAXCON",
+        "tag_desc": "TCP session count in Mega ( 1 ~ 16 )",
+        "tag_value": "2"
+      },
+      {
+        "tag": "UDP_MAXCON",
+        "tag_desc": "UDP session count in Mega ( 1 ~ 8 )",
+        "tag_value": "2"
+      },
+      {
+        "tag": "TCP_FORCE_RST",
+        "tag_desc": "TCP 미연결세션 Reset 설정(0: 미사용, 1: 사용)",
+        "tag_value": "0"
+      },
+      {
+        "tag": "BYPASS_ICMP_IN",
+        "tag_desc": "ICMP Bypass In GW,SvrIP",
+        "tag_value": "192.168.1.1,192.168.1.10"
+      },
+      {
+        "tag": "BYPASS_ICMP_EX",
+        "tag_desc": "ICMP Bypass In GW,SvrIP",
+        "tag_value": "192.168.1.1,192.168.1.100"
+      },
+      {
+        "tag": "DNS_PACKET_SIZE",
+        "tag_desc": "DNS Packet SIZE(Default: 512)",
+        "tag_value": "512"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/nsnat2": {
+    "NSNAT2": [
+      {
+        "NAT": "192.168.101.0/24;192.168.101.41:5670;192.168.101.201~192.168.101.210;192.168.1.78:5670",
+        "update_time": "20240101000000",
+        "writer": "Webmanager"
+      },
+      {
+        "NAT": "192.168.1.0/24;192.168.1.42:1120;192.168.101.201~192.168.101.204;192.168.101.177:1120",
+        "update_time": "20240101000000",
+        "writer": "Webmanager"
+      },
+      {
+        "NAT": "192.168.1.0/24;192.168.1.42:8080;192.168.1.100~192.168.1.104;192.168.101.177:8080",
+        "update_time": "20240101000000",
+        "writer": "Webmanager"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/otelconfig": {
+    "OTEL": {
+      "otel_conn": "192.168.20.110:4317"
+    }
+  },
+  "namespace/service/sgate/IN/common/scan-directory": {
+    "SCAN_DIRECTORY": [
+      {
+        "dir_type": "2",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "save_path": "-",
+        "save_type": "1",
+        "scan_cycle": "60",
+        "scan_desc": "외부-자동승인 작업 [PC to PC]",
+        "scan_dir": "/hrx/data/mPcUser",
+        "sdir_mid": "201003010300000005",
+        "svc_mid": "201003010300005005",
+        "writer": "202308110800000003"
+      },
+      {
+        "dir_type": "1",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "save_path": "-",
+        "save_type": "1",
+        "scan_cycle": "60",
+        "scan_desc": "외부-자동승인 작업 [PC to PC]",
+        "scan_dir": "/hrx/data/cPcUser",
+        "sdir_mid": "201003010300000006",
+        "svc_mid": "0",
+        "writer": "202308110800000003"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/shared-volume": {
+    "SVC_GROUP": [
+      {
+        "block_mtype": "1",
+        "blockcount": "2",
+        "blockno": "0",
+        "checksum": "2",
+        "datablockno": "0",
+        "datadevname": "",
+        "datasize": "0",
+        "devname": "/dev/raw/raw3",
+        "devstat": "1",
+        "devtype": "1",
+        "rradd_num": "1280",
+        "rrmax_num": "12800",
+        "rrntime": "1",
+        "security": "2",
+        "start_tid": "1",
+        "startblockno": "0",
+        "svc_id": "1",
+        "vol_id": "201003010550000003"
+      },
+      {
+        "block_mtype": "1",
+        "blockcount": "1",
+        "blockno": "0",
+        "checksum": "2",
+        "datablockno": "0",
+        "datadevname": "",
+        "datasize": "0",
+        "devname": "/dev/raw/raw13",
+        "devstat": "1",
+        "devtype": "2",
+        "rradd_num": "1280",
+        "rrmax_num": "12800",
+        "rrntime": "1",
+        "security": "2",
+        "start_tid": "1",
+        "startblockno": "0",
+        "svc_id": "11",
+        "vol_id": "201003010550000013"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/strconnect": {
+    "CONFIG": {
+      "file_log": 0,
+      "log_level": 15,
+      "max_client_count": 200,
+      "max_master_count": 1,
+      "max_slave_count": 1
+    }
+  },
+  "namespace/service/sgate/IN/common/svc-port": {
+    "SVC_PORT": [
+      {
+        "connect_log": "3",
+        "in_ip": "255.255.255.255",
+        "in_ip_len": "0",
+        "in_port": "5432",
+        "job_confirm": "2",
+        "job_end": "240000",
+        "job_start": "000000",
+        "job_type": "2",
+        "job_week": "1",
+        "mon_flag": "1",
+        "out_ip": "127.0.0.1",
+        "out_port": "5432",
+        "rxtx_check": "0",
+        "svc_desc": "DB 연계 2",
+        "svc_mid": "201003010100000001",
+        "svc_mod": "0",
+        "svc_type": "2",
+        "writer": "201004010800000001"
+      }
+    ]
+  },
+  "namespace/service/sgate/IN/common/syscntl": {
+    "CONFIG": {
+      "log_level": 15,
+      "network_check_flag": 0,
+      "ping_wait_time": 500,
+      "signal_link_log": 0,
+      "time_req_flag": 0,
+      "time_udp_flag": 1
+    }
+  },
+  "namespace/service/sgate/IN/common/sysconf": {
+    "SYSTEM_ENV": [
+      {
+        "tag": "ADALDAPSVR",
+        "tag_desc": "AD/LDAP Server 정보 / - 서버 사용 / Login 기능",
+        "tag_value": "hsckAD.com192.168.1.232:389"
+      },
+      {
+        "tag": "AFTERAPPROVE",
+        "tag_desc": "사후 결재 사용 가능 유무 / 서버 + Agent 사용 / bind Ack 전송 _ 화면구성",
+        "tag_value": "none/none"
+      },
+      {
+        "tag": "AFTERAPPROVE_NOTI_DAY",
+        "tag_desc": "Agent 사후 결제 누적 알람 / 서버 사용/ 조회 기준 정보를 Agent 전송함.",
+        "tag_value": "25/30"
+      },
+      {
+        "tag": "AFTERAPPROVEFILE",
+        "tag_desc": "사후 결재 이후에 결재자가 미리 보기 기능 할수 있는 기능 / 서버 사용 / 계산 결과 값만 Agent 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "AFTERAPPROVEMAXCOUNT",
+        "tag_desc": "경고일 기준 Count / Agent 사용 / Bind Ack 전송 _ 기안자 결제자 기준 Count",
+        "tag_value": "1/500"
+      },
+      {
+        "tag": "ALARMAUTH",
+        "tag_desc": "관리자에게 CPU.dislk.memory 알람 전송 / Webmanager / webmanager에서 설정 하는 방안으로 ..",
+        "tag_value": "root@localhost"
+      },
+      {
+        "tag": "APPROVEPROXY",
+        "tag_desc": "조회 시 대 결제자 조회시 사용 / server + Agent 사용 / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "APPROVEPROXYRIGHT",
+        "tag_desc": "일반 사용자 결재 등록 가능하도록 설정 / Agent 사용 / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "APPROVESTEP",
+        "tag_desc": "기본 결재 정보 전송 시 설정 기준으로 Bind Ack 전송함. / Server + Agent 사용 / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "APPROVETYPESFM",
+        "tag_desc": "실제 결재한 결재자 정보 표시 하기 위한 설정 / Agent 사용 / Bind Ack 전송 _ 대 결재자 재공 방식으로 필요함.",
+        "tag_value": "1"
+      },
+      {
+        "tag": "APPROVEUSETYPE",
+        "tag_desc": "전체 결재자 설정 , Bind_ack 기본 결재 라인 정보 전송 유무/ 서버 + Agent 사용 / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "AUTHUSER",
+        "tag_desc": "비밀번호 규칙 / 서버 + Agent 사용 / ready 전송 필요함",
+        "tag_value": "N50000"
+      },
+      {
+        "tag": "BACKUPSAVECYCLE",
+        "tag_desc": "백업 File 만료 시간 / 서버 /",
+        "tag_value": "90"
+      },
+      {
+        "tag": "BASEDIR",
+        "tag_desc": "기본 설정 Home Dir/ 서버 /",
+        "tag_value": "/home/hsck"
+      },
+      {
+        "tag": "BASELOGDIR",
+        "tag_desc": "기본 설정 Log Dir/ 서버 /",
+        "tag_value": "/hrx/log/hrxlog"
+      },
+      {
+        "tag": "BASEMEMADDR",
+        "tag_desc": "공유 메모리 정보 설정/ 서버 /",
+        "tag_value": "0x0,0x50000000"
+      },
+      {
+        "tag": "CHECKSKIPLIST",
+        "tag_desc": "예외 파일 설정 처리 / 미사용",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_BINARY_CHECK",
+        "tag_desc": "확장자 변경 시 검출 설정 / Agent / Bind _ Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_BINARY_CHECK_EXT",
+        "tag_desc": "확장자 변경 시 검출 대상 / Agent / Bind _Ack 전송",
+        "tag_value": "exe;zip"
+      },
+      {
+        "tag": "CLIENT_DESC_MIN_LENGTH",
+        "tag_desc": "설명 최서 설정 / Agent / Bind_Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_FILECHECK_EXCEPTION",
+        "tag_desc": "Agent 파일 검사 예외 신청 / 미 사용",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CLIENT_MANAGER_INFO",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT_EXT",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "ODT;ODS;ODP;DOC;DOCM;DOCX;DOT;DOTM;DOTX;RTF;XLS;XLSB;XLSM;XLSX;XLT;XLTM;XLTX;XLW;POT;PPT;POTM;POTX;PPS;PPSM;PPSX;PPTM;PPTX;HML;HWP;HWPX"
+      },
+      {
+        "tag": "CLIENT_OLE_EXTRACT_MTYPE",
+        "tag_desc": "OLE 검사 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "B"
+      },
+      {
+        "tag": "CLIENT_PREVIEW_VIEWER_EXT",
+        "tag_desc": "미리 보기 확장자 정보 / Agent / Bind Ack 전송",
+        "tag_value": "pdf;docx;doc;pptx;ppt;xlsx;xls;xlw;xlsb;xlsm;csv;dbf;dif;slk;sylk;prn;ods;fods;gif;jpg;jpeg;bmp;tiff;tif;png;svg;txt;log"
+      },
+      {
+        "tag": "CLIENT_PRIVACY_COMMENT",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_TITLE_MIN_LENGTH",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENT_TRANSFER_DESCRIPTION",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "설명을 입력하십시오. (최대 한글 80자, 영문 250자)"
+      },
+      {
+        "tag": "CLIENT_TRANSFER_TITLE",
+        "tag_desc": "파일 전송 시 설정 사용/ Agent / Bind Ack 전송",
+        "tag_value": "제목을 입력하십시오. (최대 한글 80자, 영문 250자)"
+      },
+      {
+        "tag": "CLIENT_URL_FW_PAGE",
+        "tag_desc": "Redirection 시 HTML 위치 파일 정보 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_URLREDIRECTION_F_INFO",
+        "tag_desc": "Agent UI 표시 하기 위한 용도 / Agent / Bind Ack 전송",
+        "tag_value": ""
+      },
+      {
+        "tag": "CLIENT_ZIP_DEPTH",
+        "tag_desc": "zip압축 설정 / Agent / Bind Ack 전송",
+        "tag_value": "3-1"
+      },
+      {
+        "tag": "CLIENTHASHCHECK",
+        "tag_desc": "Agent Version에 대한 Hash check / server / Bind 시 Agent에서 전송 하여 Server 처리 한다.",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENTIPMACCHK",
+        "tag_desc": "Agent 접속 정보 Check / server / Bind 시 Agent에서 전송 하여 Server 처리 한다.",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CLIENTUPGRADE",
+        "tag_desc": "강제 Agent 업데이트[전체 / 부분] / server + Agent / Bind_ Ack",
+        "tag_value": "1"
+      },
+      {
+        "tag": "CMDCOUNT",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "5000"
+      },
+      {
+        "tag": "CMDSIZE",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "512"
+      },
+      {
+        "tag": "CTLRDISKWINC",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "0"
+      },
+      {
+        "tag": "CTLRDISKWINCMAX",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "2"
+      },
+      {
+        "tag": "CS_EXCEPTION_EXT_REASON_TYPE",
+        "tag_desc": "예외 확장자 전송 시 글자수 제한 /Agent / Bind_ack 전송",
+        "tag_value": "0/0"
+      },
+      {
+        "tag": "DBBACKUPDIR",
+        "tag_desc": "Database 백업 시 사용 / Webmanager 사용 /",
+        "tag_value": "/home/hsck/dbms/backup"
+      },
+      {
+        "tag": "DBPW",
+        "tag_desc": "oring Task 사용 / Server /",
+        "tag_value": "127.0.0.1/5432/hsckdb/hsck/hsck2301"
+      },
+      {
+        "tag": "DEPTQUERYTYPE",
+        "tag_desc": "Data Base Function 부서 Tree 생성 및 조회 시 사용 / Server",
+        "tag_value": "3NONEuser_name/user_id"
+      },
+      {
+        "tag": "EXCEPTIONSIZE",
+        "tag_desc": "EXCEPTIONEXT 의 Size 설정 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FILEENCODETYPE",
+        "tag_desc": "파일 인코딩 Type / server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FILEFILTER",
+        "tag_desc": "Server To Server 에서 사용 되는 설정 / Origin Task 사용에 의한 간접 연동 시.. / server",
+        "tag_value": "exe;com;dll"
+      },
+      {
+        "tag": "FILEFILTEREXCEPT",
+        "tag_desc": "Weblink 파일 전송 시 사용 / Server",
+        "tag_value": ""
+      },
+      {
+        "tag": "FILEFILTERTYPE",
+        "tag_desc": "파일 전송 시 사용 / Server+ Agent / bind_Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "FILEMIMECHECK",
+        "tag_desc": "파일 Mine 사용 유무 / server + Agent / Bind_Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "FILEPARTSIZE",
+        "tag_desc": "HSZ 파일 의 송 수신 Packet Size 설정 / origin task / Server + Agent / Bind Ack",
+        "tag_value": "1048576"
+      },
+      {
+        "tag": "FORWARD_AUTODOWN",
+        "tag_desc": "포워드 다운 로드 / Agent / Bind_Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FTPLIMITFLAG",
+        "tag_desc": "????? / server",
+        "tag_value": "1"
+      },
+      {
+        "tag": "FTPRDISKWINC",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "FTPRDISKWINCMAX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "15"
+      },
+      {
+        "tag": "GOOGLE_OTP",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "0"
+      },
+      {
+        "tag": "GOOGLE_OTP_PERIOD",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "30"
+      },
+      {
+        "tag": "GOOGLE_OTP_HMAC_TYPE",
+        "tag_desc": "구글 인증 / Server + Agent / Bind_Ack",
+        "tag_value": "SHA1"
+      },
+      {
+        "tag": "HSZFILEOPTION",
+        "tag_desc": "파일 암호화 압축 / server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "HSZFILEOPTIONSIZE",
+        "tag_desc": "파일 암호화 압축 / server + Agent / Bind Ack 전송",
+        "tag_value": "1024"
+      },
+      {
+        "tag": "INACTIVEUSEROPTION",
+        "tag_desc": "장기 미 접속 설정 확인 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "INTERLOCKFLAG",
+        "tag_desc": "prework list 변경 필요",
+        "tag_value": "0"
+      },
+      {
+        "tag": "LOGINTYPE",
+        "tag_desc": "로그인 설정 / Server + Agent / Ready 전송 시",
+        "tag_value": "AD_LDAP"
+      },
+      {
+        "tag": "LOGPORT",
+        "tag_desc": "Tlog 설정 / Server",
+        "tag_value": "4000"
+      },
+      {
+        "tag": "LOGUAP",
+        "tag_desc": "Tlog 계정 정보 / server",
+        "tag_value": "hsck:hsck2301;bsg:bsg2301"
+      },
+      {
+        "tag": "MAXCLOSEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30"
+      },
+      {
+        "tag": "MAXDOWNLOADCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "MAX_CLIP_SIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "-"
+      },
+      {
+        "tag": "MAXDUMPLEN",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "128"
+      },
+      {
+        "tag": "MAXFILECOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1024"
+      },
+      {
+        "tag": "MAXFILESPLITSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8388608"
+      },
+      {
+        "tag": "MAXFTPWRITEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "600000"
+      },
+      {
+        "tag": "MAXIOBLOCKCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "MAXIOQWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "MAXNETSESSION",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "MAXSTREAMLEASETIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "MAXSTREAMWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "60000"
+      },
+      {
+        "tag": "MAXSTREAMWORKCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30"
+      },
+      {
+        "tag": "NETSTREAMPOLICY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "65536"
+      },
+      {
+        "tag": "NODECOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "250000"
+      },
+      {
+        "tag": "NODESIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "NETLINKCONNTYPE",
+        "tag_desc": "보안 이미지 확인 시 사용 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "NETSTREAMPOLICY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "65536"
+      },
+      {
+        "tag": "NETSTREAMVERSION",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "NOAPPROVECOUNT",
+        "tag_desc": "결재 없이 전송 가능 한 File Count / Agent / Bind Ack 전송",
+        "tag_value": "100"
+      },
+      {
+        "tag": "OTPUSE",
+        "tag_desc": "HANSSAK OTP기능 / Server + Agent / Ready 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "OTHERSERVERINFO",
+        "tag_desc": "origin Task / Server",
+        "tag_value": ""
+      },
+      {
+        "tag": "OTHERSERVEROWNINDEX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "P2PCONTROLMID",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "201003010300000005"
+      },
+      {
+        "tag": "P2PSERVICEMID",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "201003010300000006"
+      },
+      {
+        "tag": "PASSWDEXPIREDDAYS",
+        "tag_desc": "비밀 번호 만료 / Server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PASSWDEXPIREDMETHOD",
+        "tag_desc": "비밀 번호 만료에 대한 안내 창/ Agent / Bind Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PATCHMODE",
+        "tag_desc": "update 설정 / server + Agent / Bind _Ack전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PCCHECKSUM",
+        "tag_desc": "HSZ 파일 전송에 대한 송 수신 파일 위변조 검사 / server + Agent / Bind_ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "PCDELETECYCLE",
+        "tag_desc": "수신파일 삭제 주기 설정 / Agent / Bind Ack 전송",
+        "tag_value": "14"
+      },
+      {
+        "tag": "PREWORKALLSCAN",
+        "tag_desc": "바이러스 체이서 사용 시 전체 검사 설정 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PRIVACYAPPROVETYPE",
+        "tag_desc": "/ server + Agent / Bind_Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "PROJECTNAME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "HREE(I)"
+      },
+      {
+        "tag": "RAWDISKINFO",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1HITACHIDF600F1073741824"
+      },
+      {
+        "tag": "SCANQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5000"
+      },
+      {
+        "tag": "SCHEDULEMAXCOUNT",
+        "tag_desc": "Agnet Patch 시 스케쥴 설정",
+        "tag_value": "100"
+      },
+      {
+        "tag": "SCHEDULEWAITTIME",
+        "tag_desc": "Agnet Patch 시 스케쥴 설정",
+        "tag_value": "10"
+      },
+      {
+        "tag": "SCRLOCKTIME",
+        "tag_desc": "화면 잠금 기능 /Agent / Bind _ Ack 전송",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMCHECKSUM",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "STREAMCLOSEWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1500"
+      },
+      {
+        "tag": "STREAMLOOPTIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMMAINLOOP",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10"
+      },
+      {
+        "tag": "STREAMMAXWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "128"
+      },
+      {
+        "tag": "STREAMPACKMIN",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10"
+      },
+      {
+        "tag": "STREAMPACKWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "STREAMPOLLLOOP",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "1"
+      },
+      {
+        "tag": "STREAMPOLLWAIT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "2"
+      },
+      {
+        "tag": "STREAMSECURITY",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "STREAMSECURITYSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "256"
+      },
+      {
+        "tag": "STREAMSOCKOPT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "16"
+      },
+      {
+        "tag": "STRINGRXQSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10485760"
+      },
+      {
+        "tag": "STRINGTXQSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10485760"
+      },
+      {
+        "tag": "STRRXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "STRRXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8192"
+      },
+      {
+        "tag": "STRTXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "30000"
+      },
+      {
+        "tag": "STRTXQHEADCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "10000"
+      },
+      {
+        "tag": "STRTXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "8192"
+      },
+      {
+        "tag": "SYSLOGOPTION",
+        "tag_desc": "재 설계 Log Server 관련 설계 시",
+        "tag_value": "0"
+      },
+      {
+        "tag": "SYSRDISKWINC",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "SYSRDISKWINCMAX",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "2"
+      },
+      {
+        "tag": "SYSRXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "SYSRXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "SYSTEMLOOPTIME",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "5"
+      },
+      {
+        "tag": "SYSTXQCOUNT",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "20000"
+      },
+      {
+        "tag": "SYSTXRECORDSIZE",
+        "tag_desc": "origin Task / Server",
+        "tag_value": "4096"
+      },
+      {
+        "tag": "SYSTYPE",
+        "tag_desc": "system type 내외부 시스템 / server + Agent / Ready 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "URLRECORDTYPE",
+        "tag_desc": "Url 정책 / Agent / Bind _ Ack 전송",
+        "tag_value": "2"
+      },
+      {
+        "tag": "URLREDIRECTION",
+        "tag_desc": "Url 정책 / Agent / Bind _ Ack 전송",
+        "tag_value": "1"
+      },
+      {
+        "tag": "USERIDUPPER",
+        "tag_desc": "ID 대소 문자 구분 / Server",
+        "tag_value": "0"
+      },
+      {
+        "tag": "USESECUREIMAGE",
+        "tag_desc": "보안문자 사용 / server + Agent / Bind Ack 전송",
+        "tag_value": "0"
+      },
+      {
+        "tag": "VCBLKCOUNT",
+        "tag_desc": "origin Task / server",
+        "tag_value": "300"
+      },
+      {
+        "tag": "GATEWAYPORT",
+        "tag_desc": "origin Task / server",
+        "tag_value": "8080"
+      }
+    ]
+  },
+  "namespace/service/sgate/common/sitekey": {
+    "KEY": {
+      "EncDEK": "3085b897809d12000245f2e89af84a1d11",
+      "RandomKey": "96f6a4ff7953395d45d63a6961ad2b8cac",
+      "SiteKey": "hscktest"
+    }
+  },
+  "namespace/service/sgate/common/sysid": {
+    "NSS_SYSTEM": [
+      {
+        "cpu_cnt": "8",
+        "hostname": "securegate-in01",
+        "ip_addr1": "192.168.20.110",
+        "ip_addr2": "192.168.20.110",
+        "sc_num": "1",
+        "stat": "1",
+        "sysgrp_id": "N001",
+        "system_id": "I001",
+        "system_name": "내부시스템01",
+        "system_stat": "1",
+        "system_type": "1",
+        "writer": "201004010800000001"
+      },
+      {
+        "cpu_cnt": "8",
+        "hostname": "securegate-in02",
+        "ip_addr1": "192.168.20.111",
+        "ip_addr2": "192.168.20.111",
+        "sc_num": "1",
+        "stat": "1",
+        "sysgrp_id": "N001",
+        "system_id": "I002",
+        "system_name": "내부시스템02",
+        "system_stat": "1",
+        "system_type": "1",
+        "writer": "201004010800000001"
+      },
+      {
+        "cpu_cnt": "8",
+        "hostname": "securegate-ex01",
+        "ip_addr1": "192.168.20.120",
+        "ip_addr2": "192.168.20.120",
+        "sc_num": "1",
+        "stat": "1",
+        "sysgrp_id": "N001",
+        "system_id": "E001",
+        "system_name": "외부시스템01",
+        "system_stat": "1",
+        "system_type": "2",
+        "writer": "201004010800000001"
+      },
+      {
+        "cpu_cnt": "8",
+        "hostname": "securegate-ex02",
+        "ip_addr1": "192.168.20.121",
+        "ip_addr2": "192.168.20.121",
+        "sc_num": "1",
+        "stat": "1",
+        "sysgrp_id": "N001",
+        "system_id": "E002",
+        "system_name": "외부시스템02",
+        "system_stat": "1",
+        "system_type": "2",
+        "writer": "201004010800000001"
+      }
+    ]
+  },
+  "namespace/service/sgate/common/tcsinfo": {
+    "consul": "9875f8cc3b3f4c1b6a8b5c4d98e4dc799120a7bdd7d6b2d9ac6b11f07de25fdcc44c596f473f31221d40e9b239a7751a8d2a23d3ab66beb01814850ebdf1b6be",
+    "disposer": "xxx",
+    "meta": "xxx",
+    "transfer": "xxx"
+  },
+  "service/krakend/config": {
+    "$schema": "https://www.krakend.io/schema/krakend.json",
+    "cache_ttl": "300s",
+    "name": "KrakenD - API Gateway",
+    "timeout": "3000ms",
+    "version": 3
+  }
+}

@@ -17,8 +17,8 @@ func main() {
 
 	//config.Address = "192.168.1.45:8501" // Consul 서버 주소
 
-	config := config_120()
-	fileName := "backup_120.json"
+	config := config_110()
+	fileName := "backup_110.json"
 
 	if data, err := ConsulToMap(config, "/"); err != nil {
 		fmt.Println("err:", err)
@@ -135,7 +135,7 @@ func load(fromFilePath string) (map[string]string, error) {
 // Connects to consul "key/value".
 // Reads all (i.e. "recurse") {k, v} pairs under the path offset
 // into a map[string]string preserving path hierarchy in map keys: i.e. {"universe/answers/main": "42"}
-func ConsulToMap(consulSpec *consulapi.Config, offset string, keysWithOffset ...bool) (map[string]string, error) {
+func ConsulToMap(consulSpec *consulapi.Config, offset string, keysWithOffset ...bool) (map[string]interface{}, error) {
 
 	consul, err := consulapi.NewClient(consulSpec)
 	if err != nil {
@@ -144,7 +144,7 @@ func ConsulToMap(consulSpec *consulapi.Config, offset string, keysWithOffset ...
 
 	kv := consul.KV()
 
-	config := make(map[string]string)
+	config := make(map[string]interface{})
 
 	kvps, _, err := kv.List(offset, nil)
 	if err != nil {
@@ -162,7 +162,12 @@ func ConsulToMap(consulSpec *consulapi.Config, offset string, keysWithOffset ...
 			if !withOffset {
 				k = strings.Split(kvp.Key, offset)[1]
 			}
-			config[k] = string(val[:])
+			//	config[k] = string(val[:])
+			if jsondata, err := formatJSON(val[:]); err != nil {
+				return nil, err
+			} else {
+				config[k] = jsondata
+			}
 		}
 	}
 
@@ -188,6 +193,21 @@ func ConsulToMap(consulSpec *consulapi.Config, offset string, keysWithOffset ...
 	//	}
 
 	return config, nil
+}
+
+func formatJSON(input []byte) (interface{}, error) {
+	var data interface{}
+	err := json.Unmarshal(input, &data)
+	if err != nil {
+		return "", err
+	}
+	return data, nil
+	//	prettyJSON, err := json.MarshalIndent(data, "", "  ")
+	//	if err != nil {
+	//		return "", err
+	//	}
+	//
+	//	return prettyJSON, nil
 }
 
 // MapToConsul takes a consul config and a map[string]string
@@ -217,9 +237,9 @@ func MapToConsul(consulSpec *consulapi.Config, config map[string]string) (time.D
 	return duration, nil
 }
 
-func save(toFilePath string, from map[string]string) error {
+func save(toFilePath string, from map[string]interface{}) error {
 	// map을 JSON으로 변환
-	jsonData, err := json.Marshal(from)
+	jsonData, err := json.MarshalIndent(from, "", "  ")
 	if err != nil {
 		log.Fatal(err)
 	}
