@@ -1,2 +1,0 @@
-// example.h
-void exampleFunction();
