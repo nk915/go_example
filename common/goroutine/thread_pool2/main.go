@@ -17,28 +17,6 @@ func (a A) ProcessMessage(msg string) {
 	fmt.Printf("A(%s) received:%s\n", a.Name, msg)
 	time.Sleep(3 * time.Second)
 	fmt.Printf("A(%s) finsished:%s \n", a.Name, msg)
-	if msg {
-
-	}
-
-	go aaa
-}
-
-func (a A) ProcessMessage(msg chan string) {
-
-	for {
-		select {
-		case c := <-msg:
-			if msg {
-
-			}
-			fmt.Printf("A(%s) received:%s\n", a.Name, msg)
-			time.Sleep(3 * time.Second)
-			fmt.Printf("A(%s) finsished:%s \n", a.Name, msg)
-			go aa
-		}
-	}
-
 }
 func (b B) ProcessMessage(msg string) { fmt.Println("B received:", msg) }
 
@@ -70,17 +48,18 @@ func (p *Pool) StartWorker(workerType string, worker Worker, count int) {
 		p.waitGroups[workerType] = wg
 		for i := 0; i < count; i++ {
 			wg.Add(1) // WaitGroup에 고루틴 추가를 알립니다.
-			go func(c chan string, stop chan bool, wg *sync.WaitGroup) {
-//				for {
-//					select {
-//					case msg := <-c:
-//						worker.ProcessMessage(msg)
-//					case <-stop:
-//						return
-//					}
-//				}
-//			}(workerCh, stopCh, wg)
-						worker.ProcessMessage(msg)
+			go func(c chan string, stop chan bool, wg *sync.WaitGroup, id int) {
+				defer wg.Done() // 고루틴이 종료될 때 Done을 호출합니다.
+				for {
+					select {
+					case msg := <-c:
+						worker.ProcessMessage(fmt.Sprintln(msg, id))
+					case <-stop:
+						fmt.Println("stop: ", id)
+						return
+					}
+				}
+			}(workerCh, stopCh, wg, i)
 		}
 	}
 }
@@ -118,7 +97,8 @@ func main() {
 	pool := NewPool()
 
 	pool.StartWorker("A", A{Name: "1"}, 3)
-	pool.StartWorker("B", B{}, 3)
+	pool.StartWorker("A", A{Name: "1"}, 2)
+	//pool.StartWorker("B", B{}, 3)
 
 	time.Sleep(1 * time.Second)
 
@@ -127,7 +107,7 @@ func main() {
 	pool.SendMessage("A", "Message for 3A")
 	pool.SendMessage("A", "Message for 4A")
 	pool.SendMessage("A", "Message for 5A")
-	pool.SendMessage("B", "Message for B")
+	//pool.SendMessage("B", "Message for B")
 
 	time.Sleep(time.Second / 2)
 
@@ -135,13 +115,13 @@ func main() {
 	pool.StopWorker("A") // A 타입 워커를 종료합니다. 모든 메시지 처리가 완료될 때까지 대기합니다.
 	fmt.Println("A workers stopped")
 
-	pool.StartWorker("C", B{}, 3) // B 타입 워커를 C로 재시작합니다. (예제에서는 같은 B 인스턴스 사용)
-
-	pool.SendMessage("C", "Message for C")
-
-	fmt.Println("C workers stopping")
+	//	pool.StartWorker("C", B{}, 3) // B 타입 워커를 C로 재시작합니다. (예제에서는 같은 B 인스턴스 사용)
+	//
+	//	pool.SendMessage("C", "Message for C")
+	//
+	//	fmt.Println("C workers stopping")
 	time.Sleep(15 * time.Second)
-
-	//pool.StopWorker("C")
-	fmt.Println("C workers stopped")
+	//
+	//	//pool.StopWorker("C")
+	//	fmt.Println("C workers stopped")
 }
