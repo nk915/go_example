@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+option go_package = "grpc/api"; 
+
+package api;
+
+service Ping {
+	rpc SayHello(PingRequest) returns (PingResponse) {}
+}
+
+message PingRequest {
+	string body = 1;
+}
+
+message PingResponse {
+	string body = 1;
+}
+
