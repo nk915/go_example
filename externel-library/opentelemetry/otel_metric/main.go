@@ -55,7 +55,11 @@ func initMeterProvider(ctx context.Context, res *resource.Resource, conn *grpc.C
 	}
 
 	meterProvider := sdkmetric.NewMeterProvider(
-		sdkmetric.WithReader(sdkmetric.NewPeriodicReader(metricExporter, sdkmetric.WithInterval(5*time.Second))),
+		sdkmetric.WithReader(
+			sdkmetric.NewPeriodicReader(
+				metricExporter,
+			//sdkmetric.WithInterval(5*time.Second),
+			)),
 		sdkmetric.WithResource(res),
 	)
 	otel.SetMeterProvider(meterProvider)
@@ -107,18 +111,19 @@ func main() {
 	}()
 
 	// Synchronous instruments.
+	// upDownCounter(ctx)
 	go counter(ctx)
 	go upDownCounter(ctx)
 	go histogram(ctx)
-
-	// Asynchronous instruments.
-	go counterObserver(ctx)
-	go upDownCounterObserver(ctx)
-	go gaugeObserver(ctx)
-
-	// Advanced.
-	go counterWithLabels(ctx)
-	go counterObserverAdvanced(ctx)
+	//
+	//	// Asynchronous instruments.
+	//	go counterObserver(ctx)
+	//	go upDownCounterObserver(ctx)
+	//	go gaugeObserver(ctx)
+	//
+	//	// Advanced.
+	//	go counterWithLabels(ctx)
+	//	go counterObserverAdvanced(ctx)
 
 	fmt.Println("reporting measurements to Uptrace... (press Ctrl+C to stop)")
 

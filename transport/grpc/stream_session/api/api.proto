@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option go_package = "grpc/api"; 
+
+package api;
+
+service ChatService {
+	// 클라이언트와 서버 간 양방향 스트리밍
+	rpc Connect(stream ClientMessage) returns (stream ServerMessage);
+}
+      
+message ClientMessage {
+	string client_id = 1;
+	string message = 2;
+}
+      
+message ServerMessage {
+	string message = 1;
+}
