@@ -1,17 +1,25 @@
 package main
 
 import (
-	"fmt"
 	"time"
+
+	"github.com/sirupsen/logrus"
 )
 
 func main() {
-	fmt.Println("[service] Start...")
+	log := logrus.New()
+	// log.SetLevel(logrus.DebugLevel)
+
+	log.Infoln("[service] Start...")
 
 	for i := 10; i > 0; i-- {
-		fmt.Printf("[service] wait %d...\n", i)
+		if i%3 == 0 {
+			log.Errorf("[service] wait %d...", i)
+		} else {
+			log.Printf("[service] wait %d...", i)
+		}
 		time.Sleep(time.Second)
 	}
 
-	fmt.Println("[service] End...")
+	log.Infoln("[service] End...")
 }
