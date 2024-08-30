@@ -1,6 +1,7 @@
 package main
 
 import (
+	"os"
 	"time"
 
 	"github.com/sirupsen/logrus"
@@ -8,7 +9,8 @@ import (
 
 func main() {
 	log := logrus.New()
-	// log.SetLevel(logrus.DebugLevel)
+	log.SetOutput(os.Stderr)
+	//	log.SetLevel(logrus.InfoLevel)
 
 	log.Infoln("[service] Start...")
 

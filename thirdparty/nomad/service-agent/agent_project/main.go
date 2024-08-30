@@ -3,15 +3,12 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os/exec"
 	"strings"
 	"sync"
 
 	"github.com/sirupsen/logrus"
-)
-
-const (
-	EXEC_PATH = "./service.exe"
 )
 
 func main() {
@@ -26,14 +23,14 @@ func main() {
 }
 
 func startAndMonitorProcess(log *logrus.Logger) error {
-	cmd := exec.Command("go", "run", "service_project/main.go")
+	cmd := exec.Command("go", "run", "./service_project/main.go")
 	//cmd := exec.Command("./service.exe")
 
 	// Create pipes for stdout and stderr
-	stdout, err := cmd.StdoutPipe()
-	if err != nil {
-		return fmt.Errorf("failed to create stdout pipe: %v", err)
-	}
+	//	stdout, err := cmd.StdoutPipe()
+	//	if err != nil {
+	//		return fmt.Errorf("failed to create stdout pipe: %v", err)
+	//	}
 	stderr, err := cmd.StderrPipe()
 	if err != nil {
 		return fmt.Errorf("failed to create stderr pipe: %v", err)
@@ -45,32 +42,30 @@ func startAndMonitorProcess(log *logrus.Logger) error {
 
 	// WaitGroup to wait for all goroutines to finish
 	var wg sync.WaitGroup
-	wg.Add(2)
+	wg.Add(1)
 
 	go func() {
 		defer wg.Done()
-		scanner := bufio.NewScanner(stdout)
-		for scanner.Scan() {
-			text := scanner.Text()
-			log.Infof("[A process] %s" + text)
-		}
-		if err := scanner.Err(); err != nil {
-			log.Errorf("[agent] Error reading stdout: %v", err)
-		}
-	}()
-
-	go func() {
-		defer wg.Done()
-		scanner := bufio.NewScanner(stderr)
-		for scanner.Scan() {
-			text := scanner.Text()
-			if strings.Contains(text, "Error") {
-				log.Errorf("[A process] %s" + text)
+		//reader := bufio.NewReader(io.MultiReader(stdout, stderr))
+		reader := bufio.NewReader(io.MultiReader(stderr))
+		for {
+			line, err := reader.ReadString('\n')
+			if err != nil {
+				if err != io.EOF {
+					log.Errorf("[agent] Error reading stdout: %v", err)
+				}
+				break
 			}
+			log.Infof("[A process] %s", strings.TrimSpace(line))
 		}
-		if err := scanner.Err(); err != nil {
-			log.Errorf("[agent] Error reading stderr: %v", err)
-		}
+		//	scanner := bufio.NewScanner(io.MultiReader(stdout, stderr))
+		//	for scanner.Scan() {
+		//		text := scanner.Text()
+		//		log.Infof("[A process] %s" + text)
+		//	}
+		//	if err := scanner.Err(); err != nil {
+		//		log.Errorf("[agent] Error reading stdout: %v", err)
+		//	}
 	}()
 
 	// Wait for the command to finish
