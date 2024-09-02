@@ -37,4 +37,14 @@ func main() {
 
 	log.Printf("Call: %s", r.GetBody())
 
+	state := conn.GetState()
+	log.Printf("Connection state: %v", state)
+	for {
+		if !conn.WaitForStateChange(context.Background(), state) {
+			break
+		}
+		state = conn.GetState()
+		log.Printf("Connection state changed: %v", state)
+	}
+
 }
